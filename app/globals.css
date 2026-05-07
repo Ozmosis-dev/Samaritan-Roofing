@@ -1,26 +1,44 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'MicroExtended';
+  src: url('/fonts/microextendflf-webfont.woff2') format('woff2'),
+       url('/fonts/microextendflf-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'MicroExtended';
+  src: url('/fonts/microextendflf-bold-webfont.woff2') format('woff2'),
+       url('/fonts/microextendflf-bold-webfont.woff') format('woff');
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-purple: #5f338e;
+  --color-purple-dark: #3f225e;
+  --color-navy: #1e1e2a;
+  --color-gold: #ba914e;
+  --color-near-black: #020101;
+  --color-light-gray: #f1f1f1;
+  --color-mid-gray: #dcdcde;
+  --color-text-gray: #868686;
+
+  --font-micro: 'MicroExtended', sans-serif;
+  --font-athelas: athelas, Georgia, serif;
+  --font-lato: var(--font-lato-google), 'Lato', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-lato-google), 'Lato', sans-serif;
+  color: #020101;
+  background: #ffffff;
 }

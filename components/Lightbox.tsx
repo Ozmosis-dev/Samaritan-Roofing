@@ -15,9 +15,10 @@ interface LightboxProps {
   onClose: () => void
   onPrev: () => void
   onNext: () => void
+  onGoTo?: (index: number) => void
 }
 
-export default function Lightbox({ images, index, onClose, onPrev, onNext }: LightboxProps) {
+export default function Lightbox({ images, index, onClose, onPrev, onNext, onGoTo }: LightboxProps) {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -90,7 +91,7 @@ export default function Lightbox({ images, index, onClose, onPrev, onNext }: Lig
       {/* Next button */}
       <button
         onClick={(e) => { e.stopPropagation(); onNext() }}
-        className="absolute right-4 lg:right-20 z-[10001] w-12 h-12 flex items-center justify-center bg-navy/60 border border-gold/60 hover:bg-gold hover:border-gold transition-colors text-white"
+        className="absolute right-4 lg:right-8 z-[10001] w-12 h-12 flex items-center justify-center bg-navy/60 border border-gold/60 hover:bg-gold hover:border-gold transition-colors text-white"
         aria-label="Next image"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
@@ -121,7 +122,7 @@ export default function Lightbox({ images, index, onClose, onPrev, onNext }: Lig
         {images.map((_, i) => (
           <button
             key={i}
-            onClick={(e) => { e.stopPropagation(); setMounted(true) }}
+            onClick={(e) => { e.stopPropagation(); onGoTo ? onGoTo(i) : null }}
             className={`w-2 h-2 rounded-full transition-colors ${i === index ? 'bg-gold' : 'bg-white/30 hover:bg-white/60'}`}
             aria-label={`Image ${i + 1}`}
           />

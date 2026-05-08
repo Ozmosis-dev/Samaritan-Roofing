@@ -12,6 +12,7 @@ export default function CTAForm() {
     message: '',
     date: '',
   })
+  const [submitted, setSubmitted] = useState(false)
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,6 +22,7 @@ export default function CTAForm() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    setSubmitted(true)
   }
 
   const inputClass =
@@ -73,8 +75,31 @@ export default function CTAForm() {
           </div>
 
           {/* Right — form, 50% */}
-          <div className="bg-white lg:w-1/2 px-8 lg:px-10 py-10 lg:py-12">
-            <form onSubmit={handleSubmit}>
+          <div className="bg-white lg:w-1/2 px-8 lg:px-10 py-10 lg:py-12 flex items-center">
+            {submitted ? (
+              <div className="flex flex-col items-start gap-4 transition-opacity duration-300">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gold flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" className="w-5 h-5">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <h3 className="font-micro font-bold text-[18px] uppercase tracking-wide text-purple">
+                    We&apos;ll Be In Touch!
+                  </h3>
+                </div>
+                <p className="text-text-gray text-[15px] leading-relaxed">
+                  Thanks for reaching out. We&apos;ll review your request and contact you shortly to schedule your free inspection.
+                </p>
+                <button
+                  onClick={() => { setSubmitted(false); setForm({ name: '', phone: '', email: '', zipcode: '', message: '', date: '' }) }}
+                  className="font-micro font-bold text-[13px] uppercase tracking-wide text-gold hover:text-gold/80 transition-colors"
+                >
+                  Submit another request
+                </button>
+              </div>
+            ) : (
+            <form onSubmit={handleSubmit} className="w-full">
               <div className="grid grid-cols-2 gap-3 mb-3">
                 <input type="text" name="name" placeholder="Name" value={form.name} onChange={handleChange} required className={inputClass} />
                 <input type="tel" name="phone" placeholder="Phone" value={form.phone} onChange={handleChange} required className={inputClass} />
@@ -92,16 +117,15 @@ export default function CTAForm() {
               />
 
               <div className="mb-4">
+                <label className="block text-text-gray text-[12px] font-lato mb-1">Requested Inspection Date</label>
                 <input
                   type="date"
                   name="date"
                   value={form.date}
                   onChange={handleChange}
                   aria-label="Requested Inspection Date"
-                  placeholder="Requested Inspection Date"
                   className={inputClass}
                 />
-                <p className="text-text-gray text-[12px] font-lato mt-1">Requested Inspection Date</p>
               </div>
 
               <button
@@ -111,6 +135,7 @@ export default function CTAForm() {
                 Submit
               </button>
             </form>
+            )}
           </div>
         </div>
       </div>

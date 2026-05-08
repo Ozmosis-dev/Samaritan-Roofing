@@ -51,7 +51,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="font-micro font-bold text-[12.8px] tracking-wide uppercase text-purple hover:text-purple-dark transition-colors"
+              className="font-micro font-bold text-[12.8px] tracking-wide uppercase text-purple hover:text-purple-dark transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
               {link.label}
             </Link>
@@ -91,6 +91,7 @@ export default function Navbar() {
           className="lg:hidden p-2 transition-colors text-purple hover:text-purple-dark"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           {open ? (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">

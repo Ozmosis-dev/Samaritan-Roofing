@@ -22,12 +22,13 @@ export default function WelcomeAbout() {
   function close() { setLightboxIndex(null) }
   function prev() { setLightboxIndex((i) => ((i ?? 0) - 1 + total) % total) }
   function next() { setLightboxIndex((i) => ((i ?? 0) + 1) % total) }
+  function goTo(i: number) { setLightboxIndex(i) }
 
   return (
     <section id="about" className="bg-white relative z-10">
       {/* Main two-column content */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-32 lg:pt-40 pb-20 lg:pb-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end">
           {/* Left */}
           <div>
             <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide mb-4">
@@ -47,28 +48,28 @@ export default function WelcomeAbout() {
               commitment to building a stronger, more resilient community across
               Lumpkin County and North Georgia.
             </p>
-            <p className="text-text-gray text-base leading-relaxed mb-8">
+            <p className="text-text-gray text-base leading-relaxed mb-8 relative">
               With 15 years of keeping our word, we approach every roofing project —
               from routine repairs to full storm restoration — with integrity,
               trustworthiness, and a genuine desire to make a lasting impact.
             </p>
 
             {/* Feature badges */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ba914e" strokeWidth="2.5" className="w-5 h-5 flex-shrink-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+              <div className="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ba914e" strokeWidth="2.5" className="w-5 h-5 shrink-0 mt-0.5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span className="font-micro font-semibold text-[15px] uppercase tracking-wide text-purple">
-                  Top Quality Materials
+                <span className="font-micro font-bold text-[14px] leading-snug uppercase tracking-wider text-purple">
+                  Top Quality<br />Materials
                 </span>
               </div>
-              <div className="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ba914e" strokeWidth="2.5" className="w-5 h-5 flex-shrink-0">
+              <div className="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ba914e" strokeWidth="2.5" className="w-5 h-5 shrink-0 mt-0.5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span className="font-micro font-semibold text-[15px] uppercase tracking-wide text-purple">
-                  Limited Lifetime Warranty
+                <span className="font-micro font-bold text-[14px] leading-snug uppercase tracking-wider text-purple">
+                  Limited Lifetime<br />Warranty
                 </span>
               </div>
             </div>
@@ -76,12 +77,12 @@ export default function WelcomeAbout() {
 
           {/* Right — owner photo */}
           <div className="relative">
-            <div className="relative overflow-hidden bg-white" style={{ aspectRatio: '3/4' }}>
+            <div className="relative overflow-hidden bg-white aspect-square lg:aspect-4/3 w-full">
               <Image
                 src="/images/364760144_243586521960217_5330154351957100104_n_edited.png"
                 alt="Brandon Delk, Owner of Samaritan Roofing"
                 fill
-                className="object-contain object-center"
+                className="object-contain object-bottom"
               />
               {/* Meet the owner overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-6 py-4">
@@ -111,7 +112,7 @@ export default function WelcomeAbout() {
           <button
             key={img.src}
             onClick={() => openAt(i)}
-            className="relative overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="relative overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-zoom-in"
             aria-label={`View ${img.alt}`}
           >
             <Image
@@ -146,6 +147,7 @@ export default function WelcomeAbout() {
           onClose={close}
           onPrev={prev}
           onNext={next}
+          onGoTo={goTo}
         />
       )}
     </section>

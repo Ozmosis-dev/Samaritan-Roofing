@@ -2,14 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const photos = [
-  { src: '/images/366626664_252824134369789_8392567229813601249_n.jpg', alt: 'Happy customer', className: 'row-span-2' },
-  { src: '/images/367721266_252518514400351_2636352342363597746_n.jpg', alt: 'Roofing project' },
-  { src: '/images/373567361_262148730103996_6919455844817923889_n.jpg', alt: 'Completed roof' },
-  { src: '/images/370282795_262283493423853_4732951357477937980_n.jpg', alt: 'Team photo', className: 'row-span-2' },
-  { src: '/images/380422715_272942955691240_5735936287150425510_n.jpg', alt: 'Roof replacement' },
-  { src: '/images/376726193_266483119670557_8907199813045476357_n.jpg', alt: 'Exterior work' },
-  { src: '/images/364787928_243586848626851_1636939987281191696_n.jpg', alt: 'Samaritan team' },
-  { src: '/images/365219736_244236668561869_7711716886474415662_n.jpg', alt: 'Customer project' },
+  { src: '/images/366626664_252824134369789_8392567229813601249_n.jpg', alt: '', className: 'row-span-2' },
+  { src: '/images/367721266_252518514400351_2636352342363597746_n.jpg', alt: '' },
+  { src: '/images/373567361_262148730103996_6919455844817923889_n.jpg', alt: '' },
+  { src: '/images/370282795_262283493423853_4732951357477937980_n.jpg', alt: '', className: 'row-span-2' },
+  { src: '/images/380422715_272942955691240_5735936287150425510_n.jpg', alt: '' },
+  { src: '/images/376726193_266483119670557_8907199813045476357_n.jpg', alt: '' },
+  { src: '/images/364787928_243586848626851_1636939987281191696_n.jpg', alt: '' },
+  { src: '/images/365219736_244236668561869_7711716886474415662_n.jpg', alt: '' },
 ]
 
 export default function HappyCustomers() {
@@ -22,11 +22,12 @@ export default function HappyCustomers() {
             Building Our Community
           </p>
           <h2
-            className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4.3rem)' }}
+            className="font-athelas font-bold text-purple leading-tight mb-4 uppercase"
+            style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
           >
             Our Happy Customers Say It All!
           </h2>
+          <div className="w-20 h-[2px] bg-gold mx-auto mb-8" />
           <Link
             href="https://www.google.com/search?q=Samaritans+Roofing+%26+Exteriors+LLC+Reviews"
             target="_blank"

@@ -4,7 +4,7 @@ export default function MidpageCTA() {
   return (
     <section
       className="relative py-24 lg:py-32 bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/peaceful-senior-black-man-meditating-sitting-at-laptop-at-workplace.jpg')" }}
+      style={{ backgroundImage: "url('/images/Roofing-Dahlonega-GA312604790-1.jpeg')" }}
     >
       <div className="absolute inset-0 bg-purple-dark/90" />
 

@@ -20,15 +20,15 @@ export default function LatestNews() {
             Latest News
           </p>
           <h2
-            className="font-athelas font-semibold text-purple leading-tight"
+            className="font-athelas font-semibold text-purple leading-tight uppercase"
             style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)' }}
           >
-            Checkout our news &amp; blog
+            Check Out Our News &amp; Blog
           </h2>
         </div>
 
         {/* Posts */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className={`grid gap-8 ${posts.length === 1 ? 'grid-cols-1 max-w-lg mx-auto' : posts.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'}`}>
           {posts.map((post) => (
             <article key={post.title} className="bg-white p-8 shadow-sm">
               <p className="text-text-gray text-[12.56px] mb-3">{post.date}</p>

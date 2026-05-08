@@ -69,13 +69,13 @@ export default function WhyChooseUs() {
             {features.map((feat) => (
               <div
                 key={feat.title}
-                className="bg-white p-8 lg:p-10 shadow-sm flex flex-col items-center text-center"
+                className="bg-white p-8 lg:p-10 shadow-sm flex flex-col items-start"
               >
                 <div className="mb-4">{feat.icon}</div>
                 <h3 className="font-micro font-bold text-[16px] lg:text-[17px] uppercase tracking-wide text-purple mb-4">
                   {feat.title}
                 </h3>
-                <p className="text-text-gray text-[14.4px] leading-relaxed">
+                <p className="text-text-gray text-[14.4px] leading-relaxed text-left">
                   {feat.description}
                 </p>
               </div>

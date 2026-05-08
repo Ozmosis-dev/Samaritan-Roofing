@@ -74,7 +74,7 @@ export default function ResidentialRoofingPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative pt-72 pb-64 lg:pt-80 lg:pb-72 flex items-center justify-center text-center">
+        <section className="relative pt-52 pb-44 lg:pt-72 lg:pb-64 flex items-center justify-center text-center">
           <Image
             src="/images/Roofing-Dahlonega-GA300255932-1.jpeg"
             alt="Residential roofing in Dahlonega GA"

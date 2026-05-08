@@ -72,9 +72,9 @@ export default function Testimonials() {
               </div>
             </div>
 
-            {/* Right Quote Icon (absolute positioned) */}
-            <div className="hidden lg:block absolute right-0 top-1/2 translate-x-12 translate-y-2 pointer-events-none">
-              <Quote className="w-14 h-14 text-purple opacity-90" strokeWidth={1} />
+            {/* Decorative quote icon */}
+            <div className="hidden lg:block absolute right-4 top-4 pointer-events-none">
+              <Quote className="w-10 h-10 text-purple opacity-20" strokeWidth={1} />
             </div>
           </div>
 
@@ -100,7 +100,9 @@ export default function Testimonials() {
             className="inline-flex items-center gap-2 font-micro font-bold text-[14.4px] uppercase tracking-wide bg-gold text-white px-8 py-3.5 hover:bg-gold/90 transition-colors"
           >
             See All Our Reviews
-            <span className="font-sans font-medium text-white/90 text-sm ml-1 tracking-normal">G+</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
           </Link>
         </div>
       </div>

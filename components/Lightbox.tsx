@@ -72,7 +72,7 @@ export default function Lightbox({ images, index, onClose, onPrev, onNext, onGoT
 
       {/* Counter */}
       <div className="absolute top-5 left-6 z-[10001]">
-        <p className="font-micro font-semibold text-gold text-[13px] uppercase tracking-wide">
+        <p className="font-micro font-semibold text-gold text-xs uppercase tracking-wide">
           {index + 1} / {total}
         </p>
       </div>

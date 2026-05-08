@@ -51,7 +51,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className="font-micro font-bold text-[12.8px] tracking-wide uppercase text-purple hover:text-purple-dark transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+              className="font-micro font-bold text-xs tracking-wide uppercase text-purple hover:text-purple-dark transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
               {link.label}
             </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-2 pt-2">
           <Link
             href="/#estimate"
-            className="font-micro font-bold text-[13px] tracking-wide uppercase bg-gold text-white px-5 py-2.5 hover:bg-gold/90 transition-colors"
+            className="font-micro font-bold text-sm tracking-wider uppercase bg-gold text-white px-5 py-2.5 hover:bg-gold/90 transition-colors"
           >
             Free Estimate
           </Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="font-micro font-bold text-[14px] tracking-wide uppercase text-purple hover:text-purple-dark transition-colors"
+              className="font-micro font-bold text-sm tracking-wide uppercase text-purple hover:text-purple-dark transition-colors"
             >
               {link.label}
             </Link>
@@ -121,7 +121,7 @@ export default function Navbar() {
           <Link
             href="/#estimate"
             onClick={() => setOpen(false)}
-            className="font-micro font-bold text-[14px] uppercase bg-gold text-white px-5 py-3 text-center mt-2 hover:bg-gold/90 transition-colors"
+            className="font-micro font-bold text-sm uppercase bg-gold text-white px-5 py-3 text-center mt-2 hover:bg-gold/90 transition-colors"
           >
             Free Estimate
           </Link>

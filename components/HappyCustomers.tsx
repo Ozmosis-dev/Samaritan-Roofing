@@ -18,7 +18,7 @@ export default function HappyCustomers() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide mb-4">
+          <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
             Building Our Community
           </p>
           <h2
@@ -32,7 +32,7 @@ export default function HappyCustomers() {
             href="https://www.google.com/search?q=Samaritans+Roofing+%26+Exteriors+LLC+Reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-micro font-bold text-[14.4px] uppercase tracking-wide text-gold border border-gold px-8 py-3 hover:bg-gold hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 font-micro font-bold text-sm uppercase tracking-wider text-gold border border-gold px-8 py-3 hover:bg-gold hover:text-white transition-colors"
           >
             See Our Reviews
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">

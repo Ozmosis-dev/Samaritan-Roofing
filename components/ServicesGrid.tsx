@@ -52,11 +52,11 @@ export default function ServicesGrid() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide mb-4">
+          <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
             What We Offer
           </p>
           <h2
-            className="font-athelas font-semibold text-purple leading-tight uppercase mb-8"
+            className="font-athelas font-bold text-purple leading-tight uppercase mb-8"
             style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)' }}
           >
             Roofing &amp; Restoration Services<br className="hidden sm:block" /> in Dahlonega, GA
@@ -77,15 +77,15 @@ export default function ServicesGrid() {
                 />
               </div>
               <div className="p-8 lg:p-10 flex-grow flex flex-col">
-                <h3 className="font-micro font-bold text-[19.2px] text-purple uppercase mb-4">
+                <h3 className="font-micro font-bold text-xl text-purple uppercase mb-4">
                   {service.title}
                 </h3>
-                <p className="text-text-gray text-[14.4px] leading-relaxed mb-6 flex-grow">
+                <p className="text-text-gray text-sm leading-relaxed mb-6 flex-grow">
                   {service.description}
                 </p>
                 <Link
                   href={service.href}
-                  className="inline-flex items-center gap-1.5 font-micro font-bold text-[13px] uppercase tracking-wide text-gold hover:text-gold/80 transition-colors"
+                  className="inline-flex items-center gap-1.5 font-micro font-bold text-xs uppercase tracking-wide text-gold hover:text-gold/80 transition-colors"
                 >
                   Learn More
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">

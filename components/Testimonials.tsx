@@ -37,7 +37,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-20 text-center">
         {/* Header */}
         <div className="mb-12">
-          <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide mb-4">
+          <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
             We Take Our Community Seriously
           </p>
           <h2
@@ -53,7 +53,7 @@ export default function Testimonials() {
         <div className="relative max-w-4xl mx-auto mb-16">
           <div className="relative flex flex-col items-center justify-center">
             {/* Quote content centered */}
-            <p className="text-text-gray text-base lg:text-[18px] leading-relaxed mb-8 italic max-w-3xl">
+            <p className="text-text-gray text-base lg:text-lg leading-relaxed mb-8 italic max-w-3xl">
               "{review.text}"
             </p>
 
@@ -65,10 +65,10 @@ export default function Testimonials() {
                 </svg>
               </div>
               <div className="text-left">
-                <p className="font-micro font-bold text-[16px] text-purple uppercase tracking-wide">
+                <p className="font-micro font-bold text-base text-purple uppercase tracking-wide leading-snug">
                   {review.name}
                 </p>
-                <p className="text-gold font-micro text-[13px]">{review.location}</p>
+                <p className="text-gold font-micro text-xs">{review.location}</p>
               </div>
             </div>
 
@@ -97,7 +97,7 @@ export default function Testimonials() {
             href="https://www.google.com/search?q=Samaritans+Roofing+%26+Exteriors+LLC+Reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-micro font-bold text-[14.4px] uppercase tracking-wide bg-gold text-white px-8 py-3.5 hover:bg-gold/90 transition-colors"
+            className="inline-flex items-center gap-2 font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-8 py-3.5 hover:bg-gold/90 transition-colors"
           >
             See All Our Reviews
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">

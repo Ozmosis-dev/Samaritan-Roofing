@@ -73,7 +73,7 @@ export default function ExteriorRenovationsPage() {
                     />
                     <div className="absolute inset-0 bg-purple/75" />
                     <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 w-full">
-                        <p className="font-micro font-bold text-gold text-[12px] md:text-[14px] uppercase tracking-widest mb-6">
+                        <p className="font-micro font-bold text-gold text-xs md:text-sm uppercase tracking-widest mb-6">
                             Your Home, Reimagined By North Georgia's Trusted Roofers
                         </p>
                         <h1
@@ -89,13 +89,13 @@ export default function ExteriorRenovationsPage() {
                 <section className="relative z-20 -mt-24 max-w-7xl mx-auto px-6 lg:px-8 mb-24">
                     <div className="bg-white shadow-xl p-8 lg:p-14 flex flex-col lg:flex-row gap-12 lg:gap-16 items-start justify-between">
                         <div className="lg:w-[40%]">
-                            <h2 className="font-micro font-bold text-purple text-[18px] lg:text-[20px] leading-snug mb-6 uppercase tracking-wide">
+                            <h2 className="font-micro font-bold text-purple text-lg lg:text-xl leading-snug mb-6 uppercase tracking-wide">
                                 Transform Your Home's Exterior With Dahlonega's Top Contractor
                             </h2>
-                            <p className="text-text-gray text-[14.5px] leading-relaxed font-lato mb-4">
+                            <p className="text-text-gray text-sm leading-relaxed font-lato mb-4">
                                 At Samaritan Roofing, our expertise extends far beyond residential roofing. We know that your home's exterior is just as critical to both its overall value and aesthetic appeal.
                             </p>
-                            <p className="text-text-gray text-[14.5px] leading-relaxed font-lato">
+                            <p className="text-text-gray text-sm leading-relaxed font-lato">
                                 That's why we offer comprehensive exterior renovation services aimed at boosting curb appeal, protecting your property, and expanding your livable space. Discover how our experienced team can elevate the beauty and functionality of your home.
                             </p>
                         </div>
@@ -108,10 +108,10 @@ export default function ExteriorRenovationsPage() {
                                             <Icon className="w-5 h-5 text-white" strokeWidth={2} />
                                         </div>
                                         <div>
-                                            <h3 className="font-micro font-bold text-[14px] uppercase tracking-wider text-purple mb-2">
+                                            <h3 className="font-micro font-bold text-sm uppercase tracking-wider text-purple mb-2 leading-snug">
                                                 {s.title}
                                             </h3>
-                                            <p className="text-text-gray text-[13px] leading-relaxed font-lato">
+                                            <p className="text-text-gray text-sm leading-relaxed font-lato">
                                                 {s.description}
                                             </p>
                                         </div>
@@ -141,15 +141,15 @@ export default function ExteriorRenovationsPage() {
                                 >
                                     Your One-Stop Shop For Home Exterior Solutions In North Georgia
                                 </h2>
-                                <p className="text-text-gray text-[15px] leading-relaxed mb-6 font-lato">
+                                <p className="text-text-gray text-base leading-relaxed mb-6 font-lato">
                                     Our fully licensed and fully insured contractors are here to ensure that every aspect of your home meets our uncompromising standard of excellence. Because we offer painting, siding, outdoor living spaces, and gutters all in-house, we save you the hassle of coordinating between different contractors.
                                 </p>
-                                <p className="text-text-gray text-[15px] leading-relaxed mb-10 font-lato">
+                                <p className="text-text-gray text-base leading-relaxed mb-10 font-lato">
                                     Whether you're looking to touch up your trim or reinvent the entire look of your home, Samaritan Roofing ensures every detail enhances your home's total value, all under one roof.
                                 </p>
                                 <Link
                                     href="#estimate"
-                                    className="inline-block font-micro font-bold text-[14px] uppercase tracking-wide bg-gold text-white px-8 py-4 hover:bg-gold/90 transition-colors shadow-sm"
+                                    className="inline-block font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-8 py-4 hover:bg-gold/90 transition-colors shadow-sm"
                                 >
                                     Get Your Free Estimate
                                 </Link>
@@ -173,10 +173,10 @@ export default function ExteriorRenovationsPage() {
                                         />
                                     </div>
                                     <div className="px-8 pb-10 text-center flex-grow flex flex-col justify-start">
-                                        <h3 className="font-micro font-bold text-[16px] lg:text-[18px] uppercase tracking-widest text-purple mb-4">
+                                        <h3 className="font-micro font-bold text-base lg:text-lg uppercase tracking-widest text-purple mb-4 leading-snug">
                                             {card.title}
                                         </h3>
-                                        <p className="text-text-gray text-[14px] leading-relaxed font-lato max-w-md mx-auto">
+                                        <p className="text-text-gray text-sm leading-relaxed font-lato max-w-md mx-auto">
                                             {card.description}
                                         </p>
                                     </div>
@@ -196,7 +196,7 @@ export default function ExteriorRenovationsPage() {
                     />
                     <div className="absolute inset-0 bg-near-black/85" />
                     <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
-                        <p className="font-micro font-bold text-gold text-[12px] md:text-[14px] uppercase tracking-widest mb-4">
+                        <p className="font-micro font-bold text-gold text-xs md:text-sm uppercase tracking-widest mb-4">
                             Bring Your Vision To Life With Samaritan
                         </p>
                         <h2
@@ -205,12 +205,12 @@ export default function ExteriorRenovationsPage() {
                         >
                             Looking For A Custom Exterior Solution In Dahlonega Or North Georgia?
                         </h2>
-                        <p className="text-white/80 text-[15px] leading-relaxed mb-10 font-lato max-w-3xl mx-auto">
+                        <p className="text-white/80 text-sm leading-relaxed mb-10 font-lato max-w-3xl mx-auto">
                             If your home improvement needs go beyond standard siding, painting, or decking solutions, our custom fabrication capabilities and top-tier exterior expertise mean that the only limit is your imagination. Contact us to start discussing your fully custom build today.
                         </p>
                         <Link
                             href="#quote"
-                            className="inline-block font-micro font-bold text-[14px] uppercase tracking-wide bg-gold text-white px-8 py-4 hover:bg-gold/90 transition-colors shadow-sm"
+                            className="inline-block font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-8 py-4 hover:bg-gold/90 transition-colors shadow-sm"
                         >
                             Request A Custom Quote
                         </Link>

@@ -49,11 +49,11 @@ export default function ServicesOverview() {
         <div className="absolute inset-0 bg-navy/80" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center w-full">
-          <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide mb-5">
+          <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-5">
             Our Expertise
           </p>
           <h2
-            className="font-athelas font-semibold text-white leading-tight mb-6 max-w-4xl mx-auto uppercase"
+            className="font-athelas font-bold text-white leading-tight mb-6 max-w-4xl mx-auto uppercase"
             style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
           >
             Roofing &amp; Exterior Solutions<br className="hidden md:block" /> You Can Trust in North Georgia
@@ -78,7 +78,7 @@ export default function ServicesOverview() {
               <span className="text-gold">
                 {cat.icon}
               </span>
-              <span className="font-micro font-bold text-[14px] lg:text-[16px] leading-tight uppercase tracking-wide text-purple text-center">
+              <span className="font-micro font-bold text-sm lg:text-base leading-tight uppercase tracking-wide text-purple text-center">
                 {cat.label.replace(' ', '\n').split('\n').map((line, i) => (
                   <span key={i} className="block">{line}</span>
                 ))}

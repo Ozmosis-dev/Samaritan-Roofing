@@ -26,7 +26,7 @@ export default function CTAForm() {
   }
 
   const inputClass =
-    'border border-gold px-3 py-2 text-[15px] font-lato text-near-black placeholder-text-gray focus:outline-none focus:ring-1 focus:ring-gold focus:border-gold w-full transition-colors'
+    'border border-gold px-3 py-2 text-base font-lato text-near-black placeholder-text-gray focus:outline-none focus:ring-1 focus:ring-gold focus:border-gold w-full transition-colors'
 
   return (
     <section
@@ -49,17 +49,17 @@ export default function CTAForm() {
 
             <div className="relative z-10">
               <h2
-                className="font-athelas font-semibold text-white leading-tight uppercase mb-4"
+                className="font-athelas font-bold text-white leading-tight uppercase mb-4"
                 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.8rem)' }}
               >
                 Request a<br />free estimate
               </h2>
-              <p className="font-micro font-semibold text-gold text-[14px] uppercase tracking-wide mb-8">
+              <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-8">
                 We are ready to help
               </p>
               <a
                 href="tel:6787494808"
-                className="inline-block font-micro font-bold text-[14.4px] uppercase tracking-wide border-2 border-gold text-white px-8 py-3 hover:bg-gold transition-colors"
+                className="inline-block font-micro font-bold text-sm uppercase tracking-wider border-2 border-gold text-white px-8 py-3 hover:bg-gold transition-colors"
                 aria-label="Call 678-749-4808"
               >
                 Call 678-749-4808
@@ -84,16 +84,16 @@ export default function CTAForm() {
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                   </div>
-                  <h3 className="font-micro font-bold text-[18px] uppercase tracking-wide text-purple">
+                  <h3 className="font-micro font-bold text-lg uppercase tracking-wide text-purple leading-snug">
                     We&apos;ll Be In Touch!
                   </h3>
                 </div>
-                <p className="text-text-gray text-[15px] leading-relaxed">
+                <p className="text-text-gray text-sm leading-relaxed">
                   Thanks for reaching out. We&apos;ll review your request and contact you shortly to schedule your free inspection.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: '', phone: '', email: '', zipcode: '', message: '', date: '' }) }}
-                  className="font-micro font-bold text-[13px] uppercase tracking-wide text-gold hover:text-gold/80 transition-colors"
+                  className="font-micro font-bold text-xs uppercase tracking-wide text-gold hover:text-gold/80 transition-colors"
                 >
                   Submit another request
                 </button>
@@ -117,7 +117,7 @@ export default function CTAForm() {
               />
 
               <div className="mb-4">
-                <label className="block text-text-gray text-[12px] font-lato mb-1">Requested Inspection Date</label>
+                <label className="block text-text-gray text-xs font-lato tracking-wide mb-1">Requested Inspection Date</label>
                 <input
                   type="date"
                   name="date"
@@ -130,7 +130,7 @@ export default function CTAForm() {
 
               <button
                 type="submit"
-                className="font-micro font-bold text-[14.4px] uppercase tracking-wide bg-gold text-white px-8 py-3 hover:bg-gold/90 transition-colors"
+                className="font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-8 py-3 hover:bg-gold/90 transition-colors"
               >
                 Submit
               </button>

@@ -34,6 +34,7 @@
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -41,4 +42,7 @@ body {
   font-family: var(--font-lato-google), 'Lato', sans-serif;
   color: #020101;
   background: #ffffff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

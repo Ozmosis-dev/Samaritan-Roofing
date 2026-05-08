@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left */}
           <div>
-            <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide mb-4">
+            <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
               Why Choose Samaritan
             </p>
             <h2
@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
             </p>
             <Link
               href="/#estimate"
-              className="inline-block font-micro font-bold text-[14.4px] uppercase tracking-wide bg-gold text-white px-10 py-4 hover:bg-gold/90 transition-colors"
+              className="inline-block font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-10 py-4 hover:bg-gold/90 transition-colors"
             >
               Book a Free Inspection
             </Link>
@@ -72,10 +72,10 @@ export default function WhyChooseUs() {
                 className="bg-white p-8 lg:p-10 shadow-sm flex flex-col items-start"
               >
                 <div className="mb-4">{feat.icon}</div>
-                <h3 className="font-micro font-bold text-[16px] lg:text-[17px] uppercase tracking-wide text-purple mb-4">
+                <h3 className="font-micro font-bold text-base uppercase tracking-wide text-purple mb-4">
                   {feat.title}
                 </h3>
-                <p className="text-text-gray text-[14.4px] leading-relaxed text-left">
+                <p className="text-text-gray text-sm leading-relaxed text-left">
                   {feat.description}
                 </p>
               </div>

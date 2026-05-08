@@ -31,7 +31,7 @@ export default function WelcomeAbout() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end">
           {/* Left */}
           <div>
-            <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide mb-4">
+            <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
               Welcome to Samaritan Roofing
             </p>
             <h2
@@ -60,7 +60,7 @@ export default function WelcomeAbout() {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ba914e" strokeWidth="2.5" className="w-5 h-5 shrink-0 mt-0.5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span className="font-micro font-bold text-[14px] leading-snug uppercase tracking-wider text-purple">
+                <span className="font-micro font-bold text-sm leading-snug uppercase tracking-wider text-purple">
                   Top Quality<br />Materials
                 </span>
               </div>
@@ -68,7 +68,7 @@ export default function WelcomeAbout() {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ba914e" strokeWidth="2.5" className="w-5 h-5 shrink-0 mt-0.5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span className="font-micro font-bold text-[14px] leading-snug uppercase tracking-wider text-purple">
+                <span className="font-micro font-bold text-sm leading-snug uppercase tracking-wider text-purple">
                   Limited Lifetime<br />Warranty
                 </span>
               </div>
@@ -86,10 +86,10 @@ export default function WelcomeAbout() {
               />
               {/* Meet the owner overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-6 py-4">
-                <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide">
+                <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest">
                   Meet the Owner
                 </p>
-                <p className="font-micro font-semibold text-white text-[24px] tracking-wide">
+                <p className="font-micro font-semibold text-white text-2xl leading-tight tracking-wide">
                   Brandon Delk
                 </p>
               </div>
@@ -98,7 +98,7 @@ export default function WelcomeAbout() {
             {/* 15+ years badge — full-width gold band below photo */}
             <div className="bg-gold text-white px-6 py-4 flex items-center gap-3">
               <span className="text-2xl leading-none">★</span>
-              <p className="font-athelas font-bold text-[22px] leading-none tracking-wide uppercase">
+              <p className="font-athelas font-bold text-xl leading-tight tracking-wide uppercase">
                 15+ Years Experience
               </p>
             </div>

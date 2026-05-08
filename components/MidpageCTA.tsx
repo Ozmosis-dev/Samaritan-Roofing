@@ -10,7 +10,7 @@ export default function MidpageCTA() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
         <h2
-          className="font-athelas font-semibold text-white leading-tight mb-6 uppercase"
+          className="font-athelas font-bold text-white leading-tight mb-6 uppercase"
           style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
         >
           Don&apos;t Just Replace Your Roof — Replace Your Worries. Dahlonega&apos;s
@@ -24,7 +24,7 @@ export default function MidpageCTA() {
         </p>
         <Link
           href="/#estimate"
-          className="inline-block font-micro font-bold text-[14.4px] uppercase tracking-wide bg-gold text-white px-10 py-4 hover:bg-gold/90 transition-colors"
+          className="inline-block font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-10 py-4 hover:bg-gold/90 transition-colors"
         >
           Request My Free Roofing Estimate
         </Link>

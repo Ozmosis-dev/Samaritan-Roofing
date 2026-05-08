@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
-import CTAForm from '@/components/CTAForm'
 import Footer from '@/components/Footer'
+import { CheckCircle2, Wrench, Home, Shield, Ruler } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Residential Roofing Services Dahlonega GA | Samaritan Roofing',
@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 }
 
 const services = [
-  { title: 'Roof Repairs' },
-  { title: 'Soffit + Fascia' },
-  { title: 'Gutters + Guards' },
-  { title: 'Emergency Calls' },
+  { title: 'Roof Repairs', icon: Wrench },
+  { title: 'Gutters + Guards', icon: Ruler },
+  { title: 'Soffit + Fascia', icon: Home },
+  { title: 'Emergency Calls', icon: Shield },
 ]
 
 const galleryImages = [
@@ -46,21 +46,25 @@ const detailServices = [
     title: 'Fascia Repair',
     description:
       'Our team offers expert fascia repair services that guarantee both functional and aesthetically pleasing results.',
+    iconSrc: '/icons/fascia-repair.svg',
   },
   {
     title: 'Soffit Repair',
     description:
       "We provide top-notch soffit repair services that will ensure your home's fascia and rafters are protected from water damage.",
+    iconSrc: '/icons/soffit-repair.svg',
   },
   {
     title: 'Gutters',
     description:
       'Prevent water damage with our high-quality gutter installation and repair services. Keep your home safe and dry all year round.',
+    iconSrc: '/icons/gutters.svg',
   },
   {
     title: 'Gutter Guards',
     description:
       'Protect your property with our durable, low maintenance gutter guards. No more clogs and overflowing gutters.',
+    iconSrc: '/icons/gutter-guards.svg',
   },
 ]
 
@@ -70,7 +74,7 @@ export default function ResidentialRoofingPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative min-h-[60vh] flex items-center">
+        <section className="relative pt-72 pb-64 lg:pt-80 lg:pb-72 flex items-center justify-center text-center">
           <Image
             src="/images/Roofing-Dahlonega-GA300255932-1.jpeg"
             alt="Residential roofing in Dahlonega GA"
@@ -78,222 +82,236 @@ export default function ResidentialRoofingPage() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/30" />
-          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-[70px] w-full">
-            <div className="max-w-2xl py-20">
-              <h1
-                className="font-athelas font-bold text-white leading-tight mb-6"
-                style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}
-              >
-                Residential Roofing Contractor in Dahlonega, GA
-              </h1>
-              <p className="text-white/80 text-base leading-relaxed max-w-xl">
-                At Samaritan Roofing, your trusted roofing contractor serving Dahlonega,
-                GA and surrounding North Georgia communities, we specialize in
-                residential roofing services including roof replacement, fascia and
-                soffit repairs, and gutter replacement.
+          <div className="absolute inset-0 bg-purple/75" />
+          <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 w-full">
+            <h1
+              className="font-athelas font-bold text-white leading-tight mb-6 uppercase tracking-wide"
+              style={{ fontSize: 'clamp(2rem, 3.5vw, 3.25rem)' }}
+            >
+              Residential Roofing<br />Contractor in Dahlonega, GA
+            </h1>
+            <p className="text-white/90 text-[15px] lg:text-[17px] leading-relaxed max-w-3xl mx-auto font-lato">
+              At Samaritan Roofing, your trusted roofing contractor serving Dahlonega,
+              GA and surrounding North Georgia communities, we specialize in
+              residential roofing services including roof replacement, fascia and
+              soffit repairs, and gutter replacement.
+            </p>
+          </div>
+        </section>
+
+        {/* Overlapping Services Box */}
+        <section className="relative z-20 -mt-24 max-w-7xl mx-auto px-6 lg:px-8 mb-16">
+          <div className="bg-white shadow-xl p-8 lg:p-12 flex flex-col lg:flex-row gap-10 lg:gap-14 items-center justify-between">
+            <div className="lg:w-[45%]">
+              <h2 className="font-micro font-bold text-purple text-[18px] lg:text-[20px] leading-snug mb-5 uppercase tracking-wide">
+                Residential Roofing Services In Dahlonega & North Georgia
+              </h2>
+              <p className="text-text-gray text-[14.5px] leading-relaxed font-lato">
+                From routine repairs to full roof replacements, Samaritan Roofing
+                provides reliable solutions built for North Georgia's weather. Whether
+                you're in Dahlonega, Dawsonville, or Cleveland, our team has you
+                covered.
               </p>
+            </div>
+            <div className="lg:w-[55%] grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              {services.map((s) => {
+                const Icon = s.icon
+                return (
+                  <div
+                    key={s.title}
+                    className="flex items-center gap-4 p-4 border border-gray-100 shadow-sm bg-white"
+                  >
+                    <div className="bg-gold p-2.5 flex items-center justify-center shrink-0">
+                      <Icon className="w-5 h-5 text-white" strokeWidth={2} />
+                    </div>
+                    <span className="font-micro font-bold text-[13px] uppercase tracking-wider text-purple">
+                      {s.title}
+                    </span>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </section>
 
-        {/* Services intro */}
-        <section className="bg-white py-20 lg:py-24">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="max-w-3xl mb-10">
-              <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide mb-4">
-                Choose Samaritan Roofing
-              </p>
-              <h2
-                className="font-athelas font-semibold text-purple leading-tight mb-5"
-                style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
-              >
-                Residential Roofing Services in Dahlonega &amp; North Georgia
-              </h2>
-              <p className="text-text-gray text-base leading-relaxed">
-                From routine repairs to full roof replacements, Samaritan Roofing
-                provides reliable solutions built for North Georgia&apos;s weather. Whether
-                you&apos;re in Dahlonega, Dawsonville, or Cleveland, our team has you
-                covered.
-              </p>
-            </div>
-
-            {/* Service pills */}
-            <div className="flex flex-wrap gap-4 mb-14">
-              {services.map((s) => (
-                <div
-                  key={s.title}
-                  className="font-micro font-semibold text-[16px] uppercase tracking-wide border-2 border-gold text-gold px-6 py-3"
-                >
-                  {s.title}
-                </div>
-              ))}
-            </div>
-
-            {/* Gallery grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 h-[400px] lg:h-[500px]">
-              {galleryImages.map((img) => (
-                <div key={img.src} className="relative overflow-hidden">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
+        {/* Gallery Strip */}
+        <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-24">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-8">
+            {galleryImages.map((img) => (
+              <div key={img.src} className="relative w-[100px] h-[100px] lg:w-[140px] lg:h-[140px] overflow-hidden shadow-sm">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="140px"
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Process section */}
-        <section className="bg-light-gray py-20 lg:py-24">
+        <section className="bg-light-gray py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 <h2
-                  className="font-athelas font-semibold text-purple leading-tight mb-5"
-                  style={{ fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)' }}
+                  className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
+                  style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
                 >
                   Our Roof Replacement Process in Dahlonega, GA
                 </h2>
-                <p className="text-text-gray text-base leading-relaxed mb-5">
+                <p className="text-text-gray text-[15px] leading-relaxed mb-6 font-lato">
                   When it comes to replacing your residential roof in Dahlonega or
                   anywhere across North Georgia, Samaritan Roofing follows a systematic
                   and thorough process. Our experienced team ensures that every step is
                   executed with precision, from the initial inspection to the final
                   touches.
                 </p>
-                <p className="text-text-gray text-base leading-relaxed mb-8">
+                <p className="text-text-gray text-[15px] leading-relaxed mb-10 font-lato">
                   Throughout the replacement process, we prioritize clear communication
                   and transparency. Our team keeps you informed at every stage, ensuring
                   that you have peace of mind and confidence in the quality of our work.
                 </p>
                 <Link
                   href="#estimate"
-                  className="inline-block font-micro font-bold text-[14.4px] uppercase tracking-wide bg-gold text-white px-10 py-4 hover:bg-gold/90 transition-colors"
+                  className="inline-block font-micro font-bold text-[14px] uppercase tracking-wide bg-gold text-white px-8 py-4 hover:bg-gold/90 transition-colors shadow-sm"
                 >
                   Get Your Free Roof Inspection
                 </Link>
               </div>
 
-              <div>
-                <ol className="space-y-3">
+              <div className="bg-white p-8 lg:p-10 shadow-sm border border-gray-50">
+                <ul className="space-y-4">
                   {processSteps.map((step, i) => (
-                    <li key={step} className="flex items-center gap-4 bg-white px-5 py-4">
-                      <span className="font-athelas font-bold text-gold text-xl w-7 flex-shrink-0">
-                        {i + 1}
-                      </span>
-                      <span className="font-micro font-semibold text-[15px] uppercase tracking-wide text-purple">
+                    <li key={step} className="flex items-center gap-4 border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                      <div className="text-purple shrink-0">
+                        <CheckCircle2 className="w-5 h-5" />
+                      </div>
+                      <span className="font-micro font-bold text-[13px] uppercase tracking-wider text-text-gray">
                         {step}
                       </span>
                     </li>
                   ))}
-                </ol>
+                </ul>
               </div>
             </div>
           </div>
         </section>
 
         {/* Comprehensive services */}
-        <section className="bg-white py-20 lg:py-24">
+        <section className="bg-light-gray/50 py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="max-w-3xl mb-12">
-              <p className="font-micro font-semibold text-gold text-[15px] uppercase tracking-wide mb-4">
-                Choose Samaritan Roofing
-              </p>
-              <h2
-                className="font-athelas font-semibold text-purple leading-tight mb-5"
-                style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
-              >
-                Comprehensive Roofing Services for Dahlonega Homeowners
-              </h2>
-              <p className="text-text-gray text-base leading-relaxed mb-8">
-                We&apos;re committed to delivering excellence in every aspect of roof care
-                for homeowners throughout Dahlonega and Lumpkin County. Choose Samaritan
-                Roofing for a seamless, all-encompassing approach to roofing maintenance
-                and repair, where quality meets reliability.
-              </p>
-              <Link
-                href="#estimate"
-                className="inline-block font-micro font-bold text-[14.4px] uppercase tracking-wide bg-gold text-white px-10 py-4 hover:bg-gold/90 transition-colors"
-              >
-                Book Your Free Roof Inspection
-              </Link>
-            </div>
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+              <div className="lg:w-[45%]">
+                <p className="font-micro font-bold text-gold text-[13px] uppercase tracking-widest mb-4">
+                  Choose Samaritan Roofing
+                </p>
+                <h2
+                  className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
+                  style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
+                >
+                  Comprehensive Roofing Services for Dahlonega Homeowners
+                </h2>
+                <p className="text-text-gray text-[15px] leading-relaxed mb-10 font-lato">
+                  We're committed to delivering excellence in every aspect of roof care
+                  for homeowners throughout Dahlonega and Lumpkin County. Choose Samaritan
+                  Roofing for a seamless, all-encompassing approach to roofing maintenance
+                  and repair, where quality meets reliability.
+                </p>
+                <Link
+                  href="#estimate"
+                  className="inline-block font-micro font-bold text-[14px] uppercase tracking-wide bg-gold text-white px-8 py-4 hover:bg-gold/90 transition-colors shadow-sm"
+                >
+                  Book Your Free Roof Inspection
+                </Link>
+              </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {detailServices.map((s) => (
-                <div key={s.title} className="bg-light-gray p-7">
-                  <h3 className="font-micro font-semibold text-[16px] uppercase tracking-wide text-purple mb-3">
-                    {s.title}
-                  </h3>
-                  <p className="text-text-gray text-[14.4px] leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
-              ))}
+              <div className="lg:w-[55%] grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                {detailServices.map((s) => (
+                  <div key={s.title} className="bg-white p-8 text-center shadow-sm border border-gray-100">
+                    <div className="flex justify-center mb-6">
+                      <Image src={s.iconSrc} alt={`${s.title} icon`} width={48} height={48} className="object-contain" />
+                    </div>
+                    <h3 className="font-micro font-bold text-[15px] uppercase tracking-wider text-purple mb-4">
+                      {s.title}
+                    </h3>
+                    <p className="text-text-gray text-[13.5px] leading-relaxed font-lato">
+                      {s.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* Materials section */}
-        <section className="relative py-20 lg:py-24">
-          <Image
-            src="/images/roofer-working-on-replacement-asphalt-shingle-roof-construction.jpg"
-            alt="Roofer working on shingle roof"
-            fill
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-navy/80" />
-          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="max-w-2xl">
-              <h2
-                className="font-athelas font-semibold text-white leading-tight mb-5"
-                style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
-              >
-                Premium Roofing Materials Built for North Georgia Weather
-              </h2>
-              <p className="text-white/80 text-base leading-relaxed mb-8">
-                From high-grade shingles to advanced underlayment, we source materials
-                known for their strength, resistance to the elements, and aesthetic
-                appeal — important qualities for homes across Dahlonega and the North
-                Georgia mountains.
-              </p>
-              <Link
-                href="#estimate"
-                className="inline-block font-micro font-bold text-[14.4px] uppercase tracking-wide text-white border-2 border-gold px-10 py-4 hover:bg-gold transition-colors"
-              >
-                See Our Roofing Options
-              </Link>
+        <section className="bg-white py-20 lg:py-28">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+              <div className="lg:w-1/2 relative h-[350px] lg:h-[450px] w-full shrink-0">
+                <Image
+                  src="/images/roofer-working-on-replacement-asphalt-shingle-roof-construction.jpg"
+                  alt="Roofer working on shingle roof"
+                  fill
+                  className="object-cover shadow-lg"
+                />
+              </div>
+              <div className="lg:w-1/2">
+                <h2
+                  className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
+                  style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
+                >
+                  Premium Roofing Materials Built for North Georgia Weather
+                </h2>
+                <p className="text-text-gray text-[15px] leading-relaxed mb-10 font-lato">
+                  From high-grade shingles to advanced underlayment, we source materials
+                  known for their strength, resistance to the elements, and aesthetic
+                  appeal — important qualities for homes across Dahlonega and the North
+                  Georgia mountains.
+                </p>
+                <Link
+                  href="#options"
+                  className="inline-block font-micro font-bold text-[14px] uppercase tracking-wide bg-gold text-white px-8 py-4 hover:bg-gold/90 transition-colors shadow-sm"
+                >
+                  View Our Roofing Options
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Bottom CTA */}
-        <section className="bg-purple py-20 lg:py-24 text-center">
-          <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <section className="relative py-24 lg:py-32 text-center">
+          <Image
+            src="/images/aerial-photo-of-house-surrounded-by-luscious-land-2789121.jpg"
+            alt="Aerial view"
+            fill
+            className="object-cover object-bottom"
+          />
+          <div className="absolute inset-0 bg-near-black/80" />
+          <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
             <h2
-              className="font-athelas font-semibold text-white leading-tight mb-5"
-              style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
+              className="font-athelas font-bold text-white leading-tight mb-6 uppercase"
+              style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
             >
               Ready to Work With a Trusted Roofing Contractor in Dahlonega, GA?
             </h2>
-            <p className="text-white/80 text-base leading-relaxed mb-8">
+            <p className="text-white/80 text-[16px] leading-relaxed mb-10 font-lato">
               Experience peace of mind knowing that our roofing services across
               Dahlonega, Dawsonville, Cleveland, and the surrounding North Georgia area
               are delivered with integrity and professionalism.
             </p>
             <Link
               href="#estimate"
-              className="inline-block font-micro font-bold text-[14.4px] uppercase tracking-wide text-white border-2 border-gold px-10 py-4 hover:bg-gold transition-colors"
+              className="inline-block font-micro font-bold text-[14px] uppercase tracking-wide bg-gold text-white px-8 py-4 hover:bg-gold/90 transition-colors shadow-sm"
             >
-              Get a Free Roofing Estimate
+              Get a Free Estimate Today
             </Link>
           </div>
         </section>
-
-        <CTAForm />
       </main>
       <Footer />
     </>

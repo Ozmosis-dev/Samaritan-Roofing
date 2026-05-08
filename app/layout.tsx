@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Lato } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const lato = Lato({
@@ -79,6 +80,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-4FYPH5SLLB"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4FYPH5SLLB');
+        `}
+      </Script>
       <body>{children}</body>
     </html>
   )

@@ -6,43 +6,49 @@ const services = [
     image: '/images/Roofing-Dahlonega-GA300255932-1.jpeg',
     title: 'Shingle Roofing',
     description:
-      'Discover our wide range of beautiful and durable shingle roofing options, designed to suit your home\'s unique style and provide long-lasting protection from the elements.',
+      'We install shingle roofs built to stand up to North Georgia\'s weather. Whether you need a full replacement or a spot repair, we\'ll get it done right. Call us for a free inspection anywhere in the Dahlonega area.',
     href: '/residential-roofing-services',
+    linkText: 'Explore Shingle Roofing',
   },
   {
     image: '/images/Roofing-Dahlonega-GA255434905-1.jpeg',
     title: 'Metal Roofing',
     description:
-      'Experience the ultimate protection and style with our exceptional metal roofing solutions, built to last and withstand the test of time.',
+      'Metal roofs outlast most other options and hold up well in rough mountain weather. We install standing seam and metal panel systems for homes across Lumpkin County and North Georgia. Ask us if metal roofing is right for your home.',
     href: '/residential-roofing-services',
+    linkText: 'See Metal Roofing Options',
   },
   {
     image: '/images/Simple-Deck-Design-Ideas-to-Improve-Your-Outdoor-Space-web-e1709751317244.jpg',
     title: 'Home Exteriors',
     description:
-      'Transform your home\'s exterior with our comprehensive range of services including siding, paint, decks and build-outs. Trust us to enhance your home\'s curb appeal and value.',
+      'From siding and paint to custom decks and outdoor living spaces, we handle it all. One crew, one contractor — no juggling multiple bids. We serve Dahlonega and all of North Georgia.',
     href: '/exterior-renovations',
+    linkText: 'View Exterior Services',
   },
   {
     image: '/images/Roofing-Dahlonega-GA220749158-1.jpeg',
     title: 'Gutters',
     description:
-      'Protect your home and experience the best gutter solutions for any weather. Our products and services ensure top shape and peace of mind.',
+      'Good gutters protect your foundation, siding, and roof line from water damage. We install, repair, and replace gutters for homes across North Georgia. Get a free estimate before the next big storm hits.',
     href: '/residential-roofing-services',
+    linkText: 'Learn About Our Gutters',
   },
   {
     image: '/images/interior-construction-of-housing-project-with-drywall-installed-door-for-a-new-home-before.jpg',
     title: 'Restoration',
     description:
-      'Revive the impeccable beauty and grandeur of your home with the unparalleled expertise and skillful restoration services offered by our team of professionals.',
+      'Storm damage, aging materials, water intrusion — we fix it all. Our restoration team brings your home back to solid condition using quality materials that last. Serving Dahlonega and surrounding North Georgia counties.',
     href: '/#estimate',
+    linkText: 'Get Restoration Help',
   },
   {
     image: '/images/Roofing-Dahlonega-GA106735844-1.jpeg',
     title: 'Insurance Claims',
     description:
-      'Get the coverage you deserve with our experienced team of professionals who are dedicated to providing you with expert assistance throughout the process of your insurance claim.',
+      'Roof insurance claims can feel overwhelming — we make the process simpler. Our team knows what adjusters look for and will help you get the coverage you\'re owed. We\'ve helped homeowners across North Georgia get fair settlements.',
     href: '/#estimate',
+    linkText: 'Start Your Insurance Claim',
   },
 ]
 
@@ -87,7 +93,7 @@ export default function ServicesGrid() {
                   href={service.href}
                   className="inline-flex items-center gap-1.5 font-micro font-bold text-xs uppercase tracking-wide text-gold hover:text-gold/80 transition-colors"
                 >
-                  Learn More
+                  {service.linkText}
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>

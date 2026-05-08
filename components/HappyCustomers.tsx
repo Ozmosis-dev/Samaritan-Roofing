@@ -2,14 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const photos = [
-  { src: '/images/366626664_252824134369789_8392567229813601249_n.jpg', alt: '', className: 'row-span-2' },
-  { src: '/images/367721266_252518514400351_2636352342363597746_n.jpg', alt: '' },
-  { src: '/images/373567361_262148730103996_6919455844817923889_n.jpg', alt: '' },
-  { src: '/images/370282795_262283493423853_4732951357477937980_n.jpg', alt: '', className: 'row-span-2' },
-  { src: '/images/380422715_272942955691240_5735936287150425510_n.jpg', alt: '' },
-  { src: '/images/376726193_266483119670557_8907199813045476357_n.jpg', alt: '' },
-  { src: '/images/364787928_243586848626851_1636939987281191696_n.jpg', alt: '' },
-  { src: '/images/365219736_244236668561869_7711716886474415662_n.jpg', alt: '' },
+  { src: '/images/366626664_252824134369789_8392567229813601249_n.jpg', alt: 'Samaritan Roofing crew completing a job in Dahlonega GA', className: 'row-span-2' },
+  { src: '/images/367721266_252518514400351_2636352342363597746_n.jpg', alt: 'North Georgia roofing project by Samaritan Roofing' },
+  { src: '/images/373567361_262148730103996_6919455844817923889_n.jpg', alt: 'Samaritan Roofing team on a residential roof in Lumpkin County GA' },
+  { src: '/images/370282795_262283493423853_4732951357477937980_n.jpg', alt: 'Roof replacement in progress by Samaritan Roofing in North Georgia', className: 'row-span-2' },
+  { src: '/images/380422715_272942955691240_5735936287150425510_n.jpg', alt: 'Samaritan Roofing contractors working on a home in Dawson County GA' },
+  { src: '/images/376726193_266483119670557_8907199813045476357_n.jpg', alt: 'Completed roofing project by Samaritan Roofing in Hall County GA' },
+  { src: '/images/364787928_243586848626851_1636939987281191696_n.jpg', alt: 'Samaritan Roofing team photo in Dahlonega GA' },
+  { src: '/images/365219736_244236668561869_7711716886474415662_n.jpg', alt: 'Samaritan Roofing job site in Cherokee County North Georgia' },
 ]
 
 export default function HappyCustomers() {

@@ -16,6 +16,33 @@ export const metadata: Metadata = {
     'Samaritan Roofing is your trusted roofing contractor in Dahlonega, GA offering roof replacement, repairs, gutters & more across North Georgia.',
   keywords:
     'roofing contractor Dahlonega GA, roof replacement, roof repair, North Georgia roofing',
+  alternates: {
+    canonical: 'https://www.samaritanroofing.com/',
+  },
+  openGraph: {
+    title: 'Roofing Contractor Dahlonega GA | Samaritan Roofing',
+    description:
+      'Trusted roofing contractor in Dahlonega, GA. Roof replacement, repairs, gutters & more across North Georgia.',
+    url: 'https://www.samaritanroofing.com/',
+    siteName: 'Samaritan Roofing',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Samaritan Roofing — Dahlonega GA Roofing Contractor',
+      },
+    ],
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Roofing Contractor Dahlonega GA | Samaritan Roofing',
+    description:
+      'Trusted roofing contractor in Dahlonega, GA. Roof replacement, repairs, gutters & more across North Georgia.',
+    images: ['/images/og-image.jpg'],
+  },
 }
 
 const localBusinessSchema = {
@@ -44,7 +71,19 @@ const localBusinessSchema = {
         { '@type': 'Place', name: 'Fannin County, GA' },
       ],
       priceRange: '$$',
-      image: 'https://samaritanroofing.com/wp-content/uploads/samaritan-roofing-logo.png',
+      image: 'https://www.samaritanroofing.com/images/Asset-6SR-copy.png',
+      sameAs: [
+        'https://m.facebook.com/100089266129991/',
+        'https://www.thumbtack.com/ga/dahlonega/roofing/samaritan-roofing-restoration-llc/service/440821901933125636',
+        'https://share.google/iHAzYYg7QOjgrKZbz',
+      ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5',
+        reviewCount: '42',
+        bestRating: '5',
+        worstRating: '1',
+      },
     },
     {
       '@type': 'Service',

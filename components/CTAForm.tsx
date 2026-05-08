@@ -13,6 +13,8 @@ export default function CTAForm() {
     date: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,9 +22,23 @@ export default function CTAForm() {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Submission failed')
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please call us or try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputClass =
@@ -128,11 +144,15 @@ export default function CTAForm() {
                 />
               </div>
 
+              {error && (
+                <p className="text-red-600 text-sm mb-3">{error}</p>
+              )}
               <button
                 type="submit"
-                className="font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-8 py-3 hover:bg-gold/90 transition-colors"
+                disabled={loading}
+                className="font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-8 py-3 hover:bg-gold/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Submit
+                {loading ? 'Sending…' : 'Submit'}
               </button>
             </form>
             )}

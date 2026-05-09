@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Quote } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { FadeUp } from './ui/motion'
 
 const reviews = [
   {
@@ -24,9 +26,10 @@ const reviews = [
 
 export default function Testimonials() {
   const [idx, setIdx] = useState(0)
+  const [direction, setDirection] = useState(1)
 
-  // Omit prev/next arrow functions since the new design only uses dots for navigation
   function setReview(index: number) {
+    setDirection(index > idx ? 1 : -1)
     setIdx(index)
   }
 
@@ -37,40 +40,63 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-20 text-center">
         {/* Header */}
         <div className="mb-12">
-          <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
-            We Take Our Community Seriously
-          </p>
-          <h2
-            className="font-athelas font-bold text-purple leading-[1.1] max-w-4xl mx-auto uppercase mb-8"
-            style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.75rem)' }}
-          >
-            What Dahlonega Homeowners Say About Samaritan Roofing
-          </h2>
-          <div className="w-16 h-[2px] bg-gold mx-auto" />
+          <FadeUp>
+            <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
+              We Take Our Community Seriously
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.08}>
+            <h2
+              className="font-athelas font-bold text-purple leading-[1.1] max-w-4xl mx-auto uppercase mb-8"
+              style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.75rem)' }}
+            >
+              What Dahlonega Homeowners Say About Samaritan Roofing
+            </h2>
+          </FadeUp>
+          <FadeUp delay={0.14}>
+            <div className="w-16 h-[2px] bg-gold mx-auto" />
+          </FadeUp>
         </div>
 
         {/* Slider Area */}
-        <div className="relative max-w-4xl mx-auto mb-16">
+        <div className="relative max-w-4xl mx-auto mb-16 min-h-[280px]">
           <div className="relative flex flex-col items-center justify-center">
-            {/* Quote content centered */}
-            <p className="text-text-gray text-base lg:text-lg leading-relaxed mb-8 italic max-w-3xl">
-              "{review.text}"
-            </p>
-
-            {/* Avatar and name block */}
-            <div className="flex items-center gap-5">
-              <div className="w-14 h-14 rounded-full bg-[#cbd5e1] overflow-hidden flex items-center justify-center shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-10 h-10 mt-2">
-                  <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="text-left">
-                <p className="font-micro font-bold text-base text-purple uppercase tracking-wide leading-snug">
-                  {review.name}
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={idx}
+                custom={direction}
+                variants={{
+                  enter: (d: number) => ({ opacity: 0, x: d * 40 }),
+                  center: { opacity: 1, x: 0 },
+                  exit: (d: number) => ({ opacity: 0, x: d * -30 }),
+                }}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] as [number,number,number,number] }}
+                className="flex flex-col items-center"
+              >
+                {/* Quote content */}
+                <p className="text-text-gray text-base lg:text-lg leading-relaxed mb-8 italic max-w-3xl">
+                  &ldquo;{review.text}&rdquo;
                 </p>
-                <p className="text-gold font-micro text-xs">{review.location}</p>
-              </div>
-            </div>
+
+                {/* Avatar and name */}
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 rounded-full bg-[#cbd5e1] overflow-hidden flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-10 h-10 mt-2">
+                      <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <p className="font-micro font-bold text-base text-purple uppercase tracking-wide leading-snug">
+                      {review.name}
+                    </p>
+                    <p className="text-gold font-micro text-xs">{review.location}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
 
             {/* Decorative quote icon */}
             <div className="hidden lg:block absolute right-4 top-4 pointer-events-none">
@@ -81,34 +107,40 @@ export default function Testimonials() {
           {/* Dots */}
           <div className="flex justify-center gap-3 mt-14">
             {reviews.map((_, i) => (
-              <button
+              <motion.button
                 key={i}
                 onClick={() => setReview(i)}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${i === idx ? 'bg-purple' : 'bg-[#cbd5e1]'}`}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  i === idx ? 'bg-purple w-6' : 'bg-[#cbd5e1] w-2.5'
+                }`}
                 aria-label={`Review ${i + 1}`}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
               />
             ))}
           </div>
         </div>
 
         {/* CTA Button */}
-        <div>
-          <Link
-            href="https://www.google.com/search?q=Samaritans+Roofing+%26+Exteriors+LLC+Reviews"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-8 py-3.5 hover:bg-gold/90 transition-colors"
-          >
-            See All Our Reviews
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </Link>
-        </div>
+        <FadeUp>
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }} className="inline-block">
+            <Link
+              href="https://www.google.com/search?q=Samaritans+Roofing+%26+Exteriors+LLC+Reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-micro font-bold text-sm uppercase tracking-wider bg-gold text-white px-8 py-3.5 hover:bg-gold/90 transition-colors"
+            >
+              See All Our Reviews
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </motion.div>
+        </FadeUp>
       </div>
 
-      {/* Google Maps (Full Width, edge-to-edge) */}
-      <div className="w-full h-[400px] bg-gray-200">
+      {/* Google Maps */}
+      <FadeIn className="w-full h-[400px] bg-gray-200">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.5!2d-83.9871!3d34.5325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5e8c9e8e0b0e5%3A0x1234567890abcdef!2sDahlonega%2C%20GA%2030533!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
           width="100%"
@@ -120,7 +152,21 @@ export default function Testimonials() {
           referrerPolicy="no-referrer-when-downgrade"
           title="Samaritan Roofing service area map"
         />
-      </div>
+      </FadeIn>
     </section>
+  )
+}
+
+function FadeIn({ children, className }: { children: React.ReactNode; className?: string }) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
+    >
+      {children}
+    </motion.div>
   )
 }

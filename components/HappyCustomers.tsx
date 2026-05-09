@@ -1,5 +1,11 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { FadeUp } from './ui/motion'
+import { motion } from 'framer-motion'
+
+const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const photos = [
   { src: '/images/366626664_252824134369789_8392567229813601249_n.jpg', alt: 'Samaritan Roofing crew completing a job in Dahlonega GA', className: 'row-span-2' },
@@ -18,35 +24,50 @@ export default function HappyCustomers() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
-            Building Our Community
-          </p>
-          <h2
-            className="font-athelas font-bold text-purple leading-[1.1] mb-4 uppercase"
-            style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
-          >
-            Our Happy Customers Say It All!
-          </h2>
-          <div className="w-20 h-[2px] bg-gold mx-auto mb-8" />
-          <Link
-            href="https://www.google.com/search?q=Samaritans+Roofing+%26+Exteriors+LLC+Reviews"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-micro font-bold text-sm uppercase tracking-wider text-gold border border-gold px-8 py-3 hover:bg-gold hover:text-white transition-colors"
-          >
-            See Our Reviews
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </Link>
+          <FadeUp>
+            <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
+              Building Our Community
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.08}>
+            <h2
+              className="font-athelas font-bold text-purple leading-[1.1] mb-4 uppercase"
+              style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
+            >
+              Our Happy Customers Say It All!
+            </h2>
+          </FadeUp>
+          <FadeUp delay={0.14}>
+            <div className="w-20 h-[2px] bg-gold mx-auto mb-8" />
+          </FadeUp>
+          <FadeUp delay={0.18}>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }} className="inline-block">
+              <Link
+                href="https://www.google.com/search?q=Samaritans+Roofing+%26+Exteriors+LLC+Reviews"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-micro font-bold text-sm uppercase tracking-wider text-gold border border-gold px-8 py-3 hover:bg-gold hover:text-white transition-colors"
+              >
+                See Our Reviews
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </motion.div>
+          </FadeUp>
         </div>
 
         {/* Photo mosaic */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-3 auto-rows-[180px]">
-          {photos.map((photo) => (
-            <div
+          {photos.map((photo, i) => (
+            <motion.div
               key={photo.src}
               className={`relative overflow-hidden ${photo.className ?? ''}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ delay: i * 0.06, duration: 0.55, ease: EASE_OUT }}
+              whileHover={{ scale: 1.02 }}
             >
               <Image
                 src={photo.src}
@@ -54,7 +75,7 @@ export default function HappyCustomers() {
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-500"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

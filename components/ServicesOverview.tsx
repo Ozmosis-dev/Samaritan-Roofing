@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { FadeUp, StaggerChildren, StaggerItem } from './ui/motion'
 
 const categories = [
   {
@@ -49,43 +50,48 @@ export default function ServicesOverview() {
         <div className="absolute inset-0 bg-navy/80" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center w-full">
-          <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-5">
-            Our Expertise
-          </p>
-          <h2
-            className="font-athelas font-bold text-white leading-tight mb-6 max-w-4xl mx-auto uppercase"
-            style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
-          >
-            Roofing &amp; Exterior Solutions<br className="hidden md:block" /> You Can Trust in North Georgia
-          </h2>
-          <p className="text-white/80 text-base max-w-2xl mx-auto mb-10">
-            Experience peace of mind knowing that our roofing services are delivered
-            with the highest level of integrity and professionalism. Trust us to
-            protect your home or business from any weather condition.
-          </p>
-          <div className="w-20 h-[2px] bg-gold mx-auto" />
+          <FadeUp>
+            <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-5">
+              Our Expertise
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <h2
+              className="font-athelas font-bold text-white leading-tight mb-6 max-w-4xl mx-auto uppercase"
+              style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
+            >
+              Roofing &amp; Exterior Solutions<br className="hidden md:block" /> You Can Trust in North Georgia
+            </h2>
+          </FadeUp>
+          <FadeUp delay={0.18}>
+            <p className="text-white/80 text-base max-w-2xl mx-auto mb-10">
+              Experience peace of mind knowing that our roofing services are delivered
+              with the highest level of integrity and professionalism. Trust us to
+              protect your home or business from any weather condition.
+            </p>
+            <div className="w-20 h-[2px] bg-gold mx-auto" />
+          </FadeUp>
         </div>
       </div>
 
       {/* Category tiles overlapping bottom edge */}
       <div className="relative z-20 max-w-5xl mx-auto px-6 lg:px-8 -mt-20 lg:-mt-24">
-        <div className="grid grid-cols-2 lg:grid-cols-4 bg-white shadow-xl py-6 lg:py-8 rounded-sm">
+        <StaggerChildren className="grid grid-cols-2 lg:grid-cols-4 bg-white shadow-xl py-6 lg:py-8 rounded-sm">
           {categories.map((cat) => (
-            <div
-              key={cat.label}
-              className="flex flex-col items-center justify-center gap-4 p-4 lg:p-6 bg-white"
-            >
-              <span className="text-gold">
-                {cat.icon}
-              </span>
-              <span className="font-micro font-bold text-sm lg:text-base leading-tight uppercase tracking-wide text-purple text-center">
-                {cat.label.replace(' ', '\n').split('\n').map((line, i) => (
-                  <span key={i} className="block">{line}</span>
-                ))}
-              </span>
-            </div>
+            <StaggerItem key={cat.label}>
+              <div className="flex flex-col items-center justify-center gap-4 p-4 lg:p-6 bg-white group cursor-default hover:bg-light-gray transition-colors duration-300">
+                <span className="text-gold group-hover:scale-110 transition-transform duration-300 block">
+                  {cat.icon}
+                </span>
+                <span className="font-micro font-bold text-sm lg:text-base leading-tight uppercase tracking-wide text-purple text-center">
+                  {cat.label.replace(' ', '\n').split('\n').map((line, i) => (
+                    <span key={i} className="block">{line}</span>
+                  ))}
+                </span>
+              </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerChildren>
       </div>
     </section>
   )

@@ -1,5 +1,11 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { FadeUp, StaggerChildren } from './ui/motion'
+import { motion } from 'framer-motion'
+
+const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const services = [
   {
@@ -58,22 +64,36 @@ export default function ServicesGrid() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
-            What We Offer
-          </p>
-          <h2
-            className="font-athelas font-bold text-purple leading-[1.1] uppercase mb-8"
-            style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)' }}
-          >
-            Roofing &amp; Restoration Services<br className="hidden sm:block" /> in Dahlonega, GA
-          </h2>
-          <div className="w-20 h-[2px] bg-gold mx-auto" />
+          <FadeUp>
+            <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest mb-4">
+              What We Offer
+            </p>
+          </FadeUp>
+          <FadeUp delay={0.08}>
+            <h2
+              className="font-athelas font-bold text-purple leading-[1.1] uppercase mb-8"
+              style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)' }}
+            >
+              Roofing &amp; Restoration Services<br className="hidden sm:block" /> in Dahlonega, GA
+            </h2>
+          </FadeUp>
+          <FadeUp delay={0.14}>
+            <div className="w-20 h-[2px] bg-gold mx-auto" />
+          </FadeUp>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div key={service.title} className="group bg-white shadow-sm flex flex-col">
+          {services.map((service, i) => (
+            <motion.div
+              key={service.title}
+              className="group bg-white shadow-sm flex flex-col"
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ delay: (i % 3) * 0.1, duration: 0.6, ease: EASE_OUT }}
+              whileHover={{ y: -6, boxShadow: '0 16px 40px rgba(0,0,0,0.12)' }}
+            >
               <div className="relative aspect-[4/3] overflow-hidden w-full">
                 <Image
                   src={service.image}
@@ -91,15 +111,22 @@ export default function ServicesGrid() {
                 </p>
                 <Link
                   href={service.href}
-                  className="inline-flex items-center gap-1.5 font-micro font-bold text-xs uppercase tracking-wide text-gold hover:text-gold/80 transition-colors"
+                  className="inline-flex items-center gap-1.5 font-micro font-bold text-xs uppercase tracking-wide text-gold hover:text-gold/80 transition-colors group/link"
                 >
                   {service.linkText}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-1"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

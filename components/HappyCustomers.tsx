@@ -22,7 +22,7 @@ export default function HappyCustomers() {
             Building Our Community
           </p>
           <h2
-            className="font-athelas font-bold text-purple leading-tight mb-4 uppercase"
+            className="font-athelas font-bold text-purple leading-[1.1] mb-4 uppercase"
             style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
           >
             Our Happy Customers Say It All!

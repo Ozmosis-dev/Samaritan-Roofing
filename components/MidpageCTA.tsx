@@ -10,7 +10,7 @@ export default function MidpageCTA() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
         <h2
-          className="font-athelas font-bold text-white leading-tight mb-6 uppercase"
+          className="font-athelas font-bold text-white leading-[1.1] mb-6 uppercase"
           style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
         >
           Don&apos;t Just Replace Your Roof — Replace Your Worries. Dahlonega&apos;s

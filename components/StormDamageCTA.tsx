@@ -17,7 +17,7 @@ export default function StormDamageCTA() {
           Insurance Claim Specialists
         </p>
         <h2
-          className="font-athelas font-bold text-white leading-tight mb-8 uppercase"
+          className="font-athelas font-bold text-white leading-[1.1] mb-8 uppercase"
           style={{ fontSize: 'clamp(1.8rem, 3.5vw, 3rem)' }}
         >
           Storm Damage in Dahlonega? Get Expert Roofing Insurance Claim Help.

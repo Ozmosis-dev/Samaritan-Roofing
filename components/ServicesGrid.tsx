@@ -43,7 +43,7 @@ const services = [
     linkText: 'Get Restoration Help',
   },
   {
-    image: '/images/Roofing-Dahlonega-GA106735844-1.jpeg',
+    image: '/images/Roofing-Dahlonega-GA299135945-1.jpeg',
     title: 'Insurance Claims',
     description:
       'Roof insurance claims can feel overwhelming — we make the process simpler. Our team knows what adjusters look for and will help you get the coverage you\'re owed. We\'ve helped homeowners across North Georgia get fair settlements.',
@@ -62,7 +62,7 @@ export default function ServicesGrid() {
             What We Offer
           </p>
           <h2
-            className="font-athelas font-bold text-purple leading-tight uppercase mb-8"
+            className="font-athelas font-bold text-purple leading-[1.1] uppercase mb-8"
             style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)' }}
           >
             Roofing &amp; Restoration Services<br className="hidden sm:block" /> in Dahlonega, GA

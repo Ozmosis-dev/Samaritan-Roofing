@@ -20,7 +20,7 @@ export default function LatestNews() {
             Latest News
           </p>
           <h2
-            className="font-athelas font-bold text-purple leading-tight uppercase"
+            className="font-athelas font-bold text-purple leading-[1.1] uppercase"
             style={{ fontSize: 'clamp(1.8rem, 3vw, 3rem)' }}
           >
             Check Out Our News &amp; Blog

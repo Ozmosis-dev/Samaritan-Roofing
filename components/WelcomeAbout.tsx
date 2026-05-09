@@ -35,7 +35,7 @@ export default function WelcomeAbout() {
               Welcome to Samaritan Roofing
             </p>
             <h2
-              className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
+              className="font-athelas font-bold text-purple leading-[1.1] mb-6 uppercase"
               style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
             >
               Experienced Roofing Services for Dahlonega Homeowners &amp;
@@ -79,18 +79,18 @@ export default function WelcomeAbout() {
           <div className="relative">
             <div className="relative overflow-hidden bg-white aspect-square lg:aspect-4/3 w-full">
               <Image
-                src="/images/364760144_243586521960217_5330154351957100104_n_edited.png"
-                alt="Brandon Delk, Owner of Samaritan Roofing"
+                src="/Roofing-Dahlonega-GA28892847238-1.jpeg"
+                alt="Brandon and Candice Delk, Owners of Samaritan Roofing"
                 fill
-                className="object-contain object-bottom"
+                className="object-cover object-center"
               />
-              {/* Meet the owner overlay */}
+              {/* Owners overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-navy/80 px-6 py-4">
                 <p className="font-micro font-semibold text-gold text-sm uppercase tracking-widest">
-                  Meet the Owner
+                  Owners
                 </p>
                 <p className="font-micro font-semibold text-white text-2xl leading-tight tracking-wide">
-                  Brandon Delk
+                  Brandon + Candice Delk
                 </p>
               </div>
             </div>

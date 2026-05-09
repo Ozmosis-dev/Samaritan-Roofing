@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
               Why Choose Samaritan
             </p>
             <h2
-              className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
+              className="font-athelas font-bold text-purple leading-[1.1] mb-6 uppercase"
               style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
             >
               Why Dahlonega Homeowners Choose Samaritan Roofing

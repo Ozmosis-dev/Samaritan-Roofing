@@ -76,6 +76,7 @@ const localBusinessSchema = {
         'https://m.facebook.com/100089266129991/',
         'https://www.thumbtack.com/ga/dahlonega/roofing/samaritan-roofing-restoration-llc/service/440821901933125636',
         'https://share.google/iHAzYYg7QOjgrKZbz',
+        'https://www.bbb.org/us/ga/dahlonega/profile/residential-roofing/samaritan-roofing-restoration-llc-0443-91846199',
       ],
       aggregateRating: {
         '@type': 'AggregateRating',

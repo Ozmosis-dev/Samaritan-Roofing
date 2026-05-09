@@ -41,7 +41,7 @@ export default function Testimonials() {
             We Take Our Community Seriously
           </p>
           <h2
-            className="font-athelas font-bold text-purple leading-tight max-w-4xl mx-auto uppercase mb-8"
+            className="font-athelas font-bold text-purple leading-[1.1] max-w-4xl mx-auto uppercase mb-8"
             style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.75rem)' }}
           >
             What Dahlonega Homeowners Say About Samaritan Roofing

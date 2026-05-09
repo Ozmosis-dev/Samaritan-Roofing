@@ -77,7 +77,7 @@ export default function ExteriorRenovationsPage() {
                             Your Home, Reimagined By North Georgia's Trusted Roofers
                         </p>
                         <h1
-                            className="font-athelas font-bold text-white leading-tight uppercase tracking-wide"
+                            className="font-athelas font-bold text-white leading-[1.1] uppercase tracking-wide"
                             style={{ fontSize: 'clamp(2rem, 3.5vw, 3.25rem)' }}
                         >
                             Exterior Renovations In<br />Dahlonega, GA
@@ -136,7 +136,7 @@ export default function ExteriorRenovationsPage() {
                             </div>
                             <div className="lg:w-1/2">
                                 <h2
-                                    className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
+                                    className="font-athelas font-bold text-purple leading-[1.1] mb-6 uppercase"
                                     style={{ fontSize: 'clamp(1.8rem, 2.5vw, 2.25rem)' }}
                                 >
                                     Your One-Stop Shop For Home Exterior Solutions In North Georgia
@@ -172,7 +172,7 @@ export default function ExteriorRenovationsPage() {
                                             className="object-cover"
                                         />
                                     </div>
-                                    <div className="px-8 pb-10 text-center flex-grow flex flex-col justify-start">
+                                    <div className="px-8 pb-10 text-center grow flex flex-col justify-start">
                                         <h3 className="font-micro font-bold text-base lg:text-lg uppercase tracking-widest text-purple mb-4 leading-snug">
                                             {card.title}
                                         </h3>
@@ -200,7 +200,7 @@ export default function ExteriorRenovationsPage() {
                             Bring Your Vision To Life With Samaritan
                         </p>
                         <h2
-                            className="font-athelas font-bold text-white leading-tight mb-8 uppercase"
+                            className="font-athelas font-bold text-white leading-[1.1] mb-8 uppercase"
                             style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}
                         >
                             Looking For A Custom Exterior Solution In Dahlonega Or North Georgia?

@@ -85,7 +85,7 @@ export default function ResidentialRoofingPage() {
           <div className="absolute inset-0 bg-purple/75" />
           <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 w-full">
             <h1
-              className="font-athelas font-bold text-white leading-tight mb-6 uppercase tracking-wide"
+              className="font-athelas font-bold text-white leading-[1.1] mb-6 uppercase tracking-wide"
               style={{ fontSize: 'clamp(2rem, 3.5vw, 3.25rem)' }}
             >
               Residential Roofing<br />Contractor in Dahlonega, GA
@@ -157,7 +157,7 @@ export default function ResidentialRoofingPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 <h2
-                  className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
+                  className="font-athelas font-bold text-purple leading-[1.1] mb-6 uppercase"
                   style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
                 >
                   Our Roof Replacement Process in Dahlonega, GA
@@ -209,7 +209,7 @@ export default function ResidentialRoofingPage() {
                   Choose Samaritan Roofing
                 </p>
                 <h2
-                  className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
+                  className="font-athelas font-bold text-purple leading-[1.1] mb-6 uppercase"
                   style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
                 >
                   Comprehensive Roofing Services for Dahlonega Homeowners
@@ -261,7 +261,7 @@ export default function ResidentialRoofingPage() {
               </div>
               <div className="lg:w-1/2">
                 <h2
-                  className="font-athelas font-bold text-purple leading-tight mb-6 uppercase"
+                  className="font-athelas font-bold text-purple leading-[1.1] mb-6 uppercase"
                   style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
                 >
                   Premium Roofing Materials Built for North Georgia Weather
@@ -294,7 +294,7 @@ export default function ResidentialRoofingPage() {
           <div className="absolute inset-0 bg-near-black/80" />
           <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
             <h2
-              className="font-athelas font-bold text-white leading-tight mb-6 uppercase"
+              className="font-athelas font-bold text-white leading-[1.1] mb-6 uppercase"
               style={{ fontSize: 'clamp(2rem, 3vw, 2.75rem)' }}
             >
               Ready to Work With a Trusted Roofing Contractor in Dahlonega, GA?

@@ -12,6 +12,8 @@ export default function StormDamageCTA() {
         src="/images/Roofing-Dahlonega-GA537019497-1.jpeg"
         alt="Storm damaged roof"
         fill
+        sizes="100vw"
+        quality={85}
         className="object-cover object-center"
       />
       <div className="absolute inset-0 bg-navy/85" />

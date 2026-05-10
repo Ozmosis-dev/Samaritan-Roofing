@@ -4,7 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({subsets:['latin'],variable:'--font-sans',display:'swap'});
 
 const lato = Lato({
   subsets: ['latin'],
@@ -119,6 +119,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn(lato.variable, "font-sans", geist.variable)}>
       <head>
+        <link rel="preload" href="/fonts/microextendflf-webfont.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/microextendflf-bold-webfont.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          as="image"
+          href="/_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1920&q=80"
+          imageSrcSet="/_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=390&q=80 390w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=768&q=80 768w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1080&q=80 1080w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1200&q=80 1200w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1920&q=80 1920w"
+          imageSizes="100vw"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

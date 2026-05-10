@@ -2,9 +2,11 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Lightbox from './Lightbox'
+import dynamic from 'next/dynamic'
 import { SlideInLeft, SlideInRight, FadeUp, StaggerChildren, StaggerItem } from './ui/motion'
 import { motion } from 'framer-motion'
+
+const Lightbox = dynamic(() => import('./Lightbox'), { ssr: false })
 
 const galleryImages = [
   { src: '/images/364742838_242998808685655_2414065212046442333_n.jpg', alt: 'Roofing project' },
@@ -107,6 +109,8 @@ export default function WelcomeAbout() {
                   src="/Roofing-Dahlonega-GA28892847238-1.jpeg"
                   alt="Brandon and Candice Delk, Owners of Samaritan Roofing"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={85}
                   className="object-cover object-center"
                 />
                 {/* Owners overlay */}

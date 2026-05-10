@@ -73,6 +73,8 @@ export default function HappyCustomers() {
                 src={photo.src}
                 alt={photo.alt}
                 fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                quality={85}
                 className="object-cover hover:scale-105 transition-transform duration-500"
               />
             </motion.div>

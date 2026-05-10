@@ -45,6 +45,8 @@ export default function Navbar() {
             className={`transition-all duration-500 ease-in-out w-auto object-contain ${
               scrolled ? 'h-[36px] lg:h-[42px]' : 'h-[90px] lg:h-[110px]'
             }`}
+            sizes="(max-width: 768px) 180px, 280px"
+            quality={85}
             priority
           />
         </Link>

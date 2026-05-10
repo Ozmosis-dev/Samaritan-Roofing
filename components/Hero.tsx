@@ -20,8 +20,10 @@ export default function Hero() {
           src="/images/roof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg"
           alt="Roofing work in Dahlonega GA"
           fill
+          sizes="100vw"
           className="object-cover object-center scale-110"
           priority
+          fetchPriority="high"
         />
       </motion.div>
 

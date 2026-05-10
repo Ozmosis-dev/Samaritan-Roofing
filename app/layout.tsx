@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
-import { Lato } from 'next/font/google'
+import { Lato, Geist } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const lato = Lato({
   subsets: ['latin'],
@@ -11,6 +14,7 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.samaritanroofing.com'),
   title: 'Roofing Contractor Dahlonega GA | Samaritan Roofing',
   description:
     'Samaritan Roofing is your trusted roofing contractor in Dahlonega, GA offering roof replacement, repairs, gutters & more across North Georgia.',
@@ -113,7 +117,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${lato.variable}`}>
+    <html lang="en" className={cn(lato.variable, "font-sans", geist.variable)}>
       <head>
         <script
           type="application/ld+json"

@@ -10,6 +10,26 @@ export const metadata: Metadata = {
   title: 'Exterior Renovations Dahlonega GA | Samaritan Roofing',
   description:
     'Transform your home aesthetics and durability with Samaritan Roofing. We offer siding, painting, decks, and outdoor living spaces in Dahlonega and North Georgia.',
+  alternates: {
+    canonical: 'https://www.samaritanroofing.com/exterior-renovations',
+  },
+  openGraph: {
+    title: 'Exterior Renovations Dahlonega GA | Samaritan Roofing',
+    description:
+      'Transform your home aesthetics and durability with Samaritan Roofing. We offer siding, painting, decks, and outdoor living spaces in Dahlonega and North Georgia.',
+    url: 'https://www.samaritanroofing.com/exterior-renovations',
+    siteName: 'Samaritan Roofing',
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Samaritan Roofing — Exterior Renovations Dahlonega GA' }],
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Exterior Renovations Dahlonega GA | Samaritan Roofing',
+    description:
+      'Transform your home with siding, painting, decks, and outdoor living spaces in Dahlonega, GA.',
+    images: ['/images/og-image.jpg'],
+  },
 }
 
 const services = [

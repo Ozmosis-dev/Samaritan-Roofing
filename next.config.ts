@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    qualities: [75, 85],
+    minimumCacheTTL: 2678400,
+  },
   async headers() {
     return [
       {

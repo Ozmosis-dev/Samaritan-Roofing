@@ -18,16 +18,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
-  async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.samaritanroofing.com' }],
-        destination: 'https://samaritanroofing.com/:path*',
-        permanent: true,
-      },
-    ];
-  },
   images: {
     formats: ['image/avif', 'image/webp'],
     qualities: [75, 80],

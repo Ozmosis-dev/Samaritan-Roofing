@@ -124,9 +124,10 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1920&q=80"
-          imageSrcSet="/_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=390&q=80 390w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=768&q=80 768w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1080&q=80 1080w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1200&q=80 1200w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1920&q=80 1920w"
+          href="/_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1920&q=85"
+          imageSrcSet="/_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=390&q=85 390w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=768&q=85 768w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1080&q=85 1080w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1200&q=85 1200w, /_next/image?url=%2Fimages%2Froof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg&w=1920&q=85 1920w"
           imageSizes="100vw"
+          fetchPriority="high"
         />
         <script
           type="application/ld+json"

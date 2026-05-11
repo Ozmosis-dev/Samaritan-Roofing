@@ -1,28 +1,12 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef, useEffect } from 'react'
+import HeroParallax from './HeroParallax'
 
 export default function Hero() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const parallaxRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    function onScroll() {
-      if (!sectionRef.current || !parallaxRef.current) return
-      const { top, height } = sectionRef.current.getBoundingClientRect()
-      const progress = Math.max(0, Math.min(1, -top / height))
-      parallaxRef.current.style.transform = `translateY(${progress * 25}%)`
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Parallax background */}
-      <div ref={parallaxRef} className="absolute inset-0">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Parallax background — only this wrapper is a client component */}
+      <HeroParallax>
         <Image
           src="/images/roof-repairs-old-roof-replacement-with-new-shingles-of-an-apartment-building.jpg"
           alt="Roofing work in Dahlonega GA"
@@ -32,7 +16,7 @@ export default function Hero() {
           priority={true}
           quality={85}
         />
-      </div>
+      </HeroParallax>
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/30" />

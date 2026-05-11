@@ -111,6 +111,7 @@ export default function WelcomeAbout() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={85}
+                  priority={true}
                   className="object-cover object-center"
                 />
                 {/* Owners overlay */}

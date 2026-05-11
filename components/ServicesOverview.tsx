@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { FadeUp, StaggerChildren, StaggerItem } from './ui/motion'
 
 const categories = [
@@ -39,15 +38,8 @@ const categories = [
 export default function ServicesOverview() {
   return (
     <section className="relative bg-light-gray">
-      {/* Dark background with photo */}
-      <div className="relative lg:min-h-[550px] pt-16 pb-32 flex flex-col justify-center">
-        <Image
-          src="/images/aerial-photo-of-house-surrounded-by-luscious-land-2789121.jpg"
-          alt="North Georgia home aerial view"
-          fill
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-navy/80" />
+      {/* Dark background */}
+      <div className="relative lg:min-h-[550px] pt-16 pb-32 flex flex-col justify-center bg-navy">
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center w-full">
           <FadeUp>

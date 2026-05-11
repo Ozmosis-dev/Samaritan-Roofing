@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import { trackPhoneCall } from '@/lib/gtag'
 
 const navLinks = [
   { label: 'About', href: '/#about' },
@@ -81,6 +82,7 @@ export default function Navbar() {
             aria-label="Call us"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => trackPhoneCall('6787494808', 'navbar')}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

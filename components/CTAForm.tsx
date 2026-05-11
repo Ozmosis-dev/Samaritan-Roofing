@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import { SlideInLeft, SlideInRight } from './ui/motion'
+import { trackFormSubmit, trackPhoneCall } from '@/lib/gtag'
 
 const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
@@ -37,6 +38,7 @@ export default function CTAForm() {
         body: JSON.stringify(form),
       })
       if (!res.ok) throw new Error('Submission failed')
+      trackFormSubmit()
       setSubmitted(true)
     } catch {
       setError('Something went wrong. Please call us or try again.')
@@ -98,6 +100,7 @@ export default function CTAForm() {
                   href="tel:6787494808"
                   className="inline-block font-micro font-bold text-sm uppercase tracking-wider border-2 border-gold text-white px-8 py-3 hover:bg-gold transition-colors duration-300"
                   aria-label="Call 678-749-4808"
+                  onClick={() => trackPhoneCall('6787494808', 'cta_form')}
                 >
                   Call 678-749-4808
                 </a>

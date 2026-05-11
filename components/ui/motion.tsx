@@ -1,7 +1,7 @@
 'use client'
 
+import React, { useRef, useState, useEffect, ReactNode } from 'react'
 import { motion, useInView, Variants } from 'framer-motion'
-import { useRef, ReactNode } from 'react'
 
 const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1]
 const EASE_IN_OUT: [number, number, number, number] = [0.4, 0, 0.2, 1]
@@ -33,6 +33,12 @@ const staggerContainerVariants: Variants = {
   },
 }
 
+function useHydrated() {
+  const [hydrated, setHydrated] = useState(false)
+  useEffect(() => { setHydrated(true) }, [])
+  return hydrated
+}
+
 interface MotionProps {
   children: ReactNode
   className?: string
@@ -45,14 +51,15 @@ interface MotionProps {
 export function FadeUp({ children, className, delay = 0, duration = 0.65, once = true, amount = 0.15 }: MotionProps) {
   const ref = useRef(null)
   const inView = useInView(ref, { once, amount })
+  const hydrated = useHydrated()
 
   return (
     <motion.div
       ref={ref}
       className={className}
       variants={fadeUpVariants}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
+      initial={hydrated ? 'hidden' : 'visible'}
+      animate={inView ? 'visible' : (hydrated ? 'hidden' : 'visible')}
       transition={{ duration, delay, ease: EASE_OUT }}
     >
       {children}
@@ -63,14 +70,15 @@ export function FadeUp({ children, className, delay = 0, duration = 0.65, once =
 export function FadeIn({ children, className, delay = 0, duration = 0.5, once = true, amount = 0.1 }: MotionProps) {
   const ref = useRef(null)
   const inView = useInView(ref, { once, amount })
+  const hydrated = useHydrated()
 
   return (
     <motion.div
       ref={ref}
       className={className}
       variants={fadeInVariants}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
+      initial={hydrated ? 'hidden' : 'visible'}
+      animate={inView ? 'visible' : (hydrated ? 'hidden' : 'visible')}
       transition={{ duration, delay, ease: EASE_IN_OUT }}
     >
       {children}
@@ -81,14 +89,15 @@ export function FadeIn({ children, className, delay = 0, duration = 0.5, once = 
 export function SlideInLeft({ children, className, delay = 0, duration = 0.7, once = true, amount = 0.15 }: MotionProps) {
   const ref = useRef(null)
   const inView = useInView(ref, { once, amount })
+  const hydrated = useHydrated()
 
   return (
     <motion.div
       ref={ref}
       className={className}
       variants={slideInLeftVariants}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
+      initial={hydrated ? 'hidden' : 'visible'}
+      animate={inView ? 'visible' : (hydrated ? 'hidden' : 'visible')}
       transition={{ duration, delay, ease: EASE_OUT }}
     >
       {children}
@@ -99,14 +108,15 @@ export function SlideInLeft({ children, className, delay = 0, duration = 0.7, on
 export function SlideInRight({ children, className, delay = 0, duration = 0.7, once = true, amount = 0.15 }: MotionProps) {
   const ref = useRef(null)
   const inView = useInView(ref, { once, amount })
+  const hydrated = useHydrated()
 
   return (
     <motion.div
       ref={ref}
       className={className}
       variants={slideInRightVariants}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
+      initial={hydrated ? 'hidden' : 'visible'}
+      animate={inView ? 'visible' : (hydrated ? 'hidden' : 'visible')}
       transition={{ duration, delay, ease: EASE_OUT }}
     >
       {children}
@@ -117,14 +127,15 @@ export function SlideInRight({ children, className, delay = 0, duration = 0.7, o
 export function StaggerChildren({ children, className, once = true, amount = 0.1 }: Omit<MotionProps, 'delay' | 'duration'>) {
   const ref = useRef(null)
   const inView = useInView(ref, { once, amount })
+  const hydrated = useHydrated()
 
   return (
     <motion.div
       ref={ref}
       className={className}
       variants={staggerContainerVariants}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
+      initial={hydrated ? 'hidden' : 'visible'}
+      animate={inView ? 'visible' : (hydrated ? 'hidden' : 'visible')}
     >
       {children}
     </motion.div>

@@ -15,18 +15,18 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://samaritanroofing.com'),
-  title: 'Roofing Contractor Dahlonega GA | Samaritan Roofing',
+  title: 'Roof Repair & Replacement in Dahlonega, GA | Samaritan Roofing',
   description:
-    'Samaritan Roofing is your trusted roofing contractor in Dahlonega, GA offering roof replacement, repairs, gutters & more across North Georgia.',
+    'Samaritan Roofing offers expert roof repair, replacement & free inspections in Dahlonega, GA. 15+ years serving North Georgia homeowners. Get your free quote today.',
   keywords:
     'roofing contractor Dahlonega GA, roof replacement, roof repair, North Georgia roofing',
   alternates: {
     canonical: 'https://samaritanroofing.com/',
   },
   openGraph: {
-    title: 'Roofing Contractor Dahlonega GA | Samaritan Roofing',
+    title: 'Roof Repair & Replacement in Dahlonega, GA | Samaritan Roofing',
     description:
-      'Trusted roofing contractor in Dahlonega, GA. Roof replacement, repairs, gutters & more across North Georgia.',
+      'Expert roof repair, replacement & free inspections in Dahlonega, GA. 15+ years serving North Georgia homeowners. Get your free quote today.',
     url: 'https://samaritanroofing.com/',
     siteName: 'Samaritan Roofing',
     images: [
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Roofing Contractor Dahlonega GA | Samaritan Roofing',
+    title: 'Roof Repair & Replacement in Dahlonega, GA | Samaritan Roofing',
     description:
-      'Trusted roofing contractor in Dahlonega, GA. Roof replacement, repairs, gutters & more across North Georgia.',
+      'Expert roof repair, replacement & free inspections in Dahlonega, GA. 15+ years serving North Georgia homeowners. Get your free quote today.',
     images: ['/images/og-image.jpg'],
   },
 }

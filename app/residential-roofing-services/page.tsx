@@ -7,16 +7,16 @@ import { CheckCircle2, Wrench, Home, Shield, Ruler } from 'lucide-react'
 import { FadeUp, SlideInLeft, SlideInRight, StaggerChildren, StaggerItem } from '@/components/ui/motion'
 
 export const metadata: Metadata = {
-  title: 'Residential Roofing Services Dahlonega GA | Samaritan Roofing',
+  title: 'Residential Roofing Services – Dahlonega, GA | Samaritan Roofing',
   description:
-    'Samaritan Roofing provides residential roofing services in Dahlonega, GA and North Georgia, including roof replacement, repairs, fascia and soffit repairs, and gutter replacement.',
+    'Need a roof repair or replacement in Dahlonega, GA? Samaritan Roofing offers free inspections, 15+ years experience, and a limited lifetime warranty. Get a free quote.',
   alternates: {
     canonical: 'https://samaritanroofing.com/residential-roofing-services/',
   },
   openGraph: {
-    title: 'Residential Roofing Services Dahlonega GA | Samaritan Roofing',
+    title: 'Residential Roofing Services – Dahlonega, GA | Samaritan Roofing',
     description:
-      'Samaritan Roofing provides residential roofing services in Dahlonega, GA and North Georgia, including roof replacement, repairs, fascia and soffit repairs, and gutter replacement.',
+      'Free roof inspections, repairs & replacements in Dahlonega, GA. 15+ years experience, limited lifetime warranty. Call Samaritan Roofing for a free quote.',
     url: 'https://samaritanroofing.com/residential-roofing-services/',
     siteName: 'Samaritan Roofing',
     images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Samaritan Roofing — Residential Roofing Services' }],
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Residential Roofing Services Dahlonega GA | Samaritan Roofing',
+    title: 'Residential Roofing Services – Dahlonega, GA | Samaritan Roofing',
     description:
-      'Samaritan Roofing provides residential roofing services in Dahlonega, GA and North Georgia.',
+      'Free roof inspections & quotes in Dahlonega, GA. 15+ years experience, limited lifetime warranty. Call Samaritan Roofing today.',
     images: ['/images/og-image.jpg'],
   },
 }

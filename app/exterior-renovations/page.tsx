@@ -7,16 +7,16 @@ import { Brush, Wrench, Home, Trees } from 'lucide-react'
 import { FadeUp, SlideInLeft, SlideInRight, StaggerChildren, StaggerItem } from '@/components/ui/motion'
 
 export const metadata: Metadata = {
-  title: 'Exterior Renovations Dahlonega GA | Samaritan Roofing',
+  title: 'Exterior Renovations – Siding, Decks & More | Samaritan Roofing Dahlonega',
   description:
-    'Transform your home aesthetics and durability with Samaritan Roofing. We offer siding, painting, decks, and outdoor living spaces in Dahlonega and North Georgia.',
+    'Siding, decks, painting & outdoor living spaces in Dahlonega, GA. Samaritan Roofing — 15+ years of trusted exterior renovation work across North Georgia. Free quote.',
   alternates: {
     canonical: 'https://samaritanroofing.com/exterior-renovations/',
   },
   openGraph: {
-    title: 'Exterior Renovations Dahlonega GA | Samaritan Roofing',
+    title: 'Exterior Renovations – Siding, Decks & More | Samaritan Roofing Dahlonega',
     description:
-      'Transform your home aesthetics and durability with Samaritan Roofing. We offer siding, painting, decks, and outdoor living spaces in Dahlonega and North Georgia.',
+      'Siding, decks, painting & outdoor living spaces in Dahlonega, GA. 15+ years of trusted exterior renovation work across North Georgia. Free quote.',
     url: 'https://samaritanroofing.com/exterior-renovations/',
     siteName: 'Samaritan Roofing',
     images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Samaritan Roofing — Exterior Renovations Dahlonega GA' }],
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Exterior Renovations Dahlonega GA | Samaritan Roofing',
+    title: 'Exterior Renovations – Siding, Decks & More | Samaritan Roofing Dahlonega',
     description:
-      'Transform your home with siding, painting, decks, and outdoor living spaces in Dahlonega, GA.',
+      'Siding, decks, painting & outdoor spaces in Dahlonega, GA. 15+ years experience. Free quote from Samaritan Roofing.',
     images: ['/images/og-image.jpg'],
   },
 }

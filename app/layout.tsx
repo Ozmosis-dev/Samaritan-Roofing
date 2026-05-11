@@ -14,20 +14,20 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.samaritanroofing.com'),
+  metadataBase: new URL('https://samaritanroofing.com'),
   title: 'Roofing Contractor Dahlonega GA | Samaritan Roofing',
   description:
     'Samaritan Roofing is your trusted roofing contractor in Dahlonega, GA offering roof replacement, repairs, gutters & more across North Georgia.',
   keywords:
     'roofing contractor Dahlonega GA, roof replacement, roof repair, North Georgia roofing',
   alternates: {
-    canonical: 'https://www.samaritanroofing.com/',
+    canonical: 'https://samaritanroofing.com/',
   },
   openGraph: {
     title: 'Roofing Contractor Dahlonega GA | Samaritan Roofing',
     description:
       'Trusted roofing contractor in Dahlonega, GA. Roof replacement, repairs, gutters & more across North Georgia.',
-    url: 'https://www.samaritanroofing.com/',
+    url: 'https://samaritanroofing.com/',
     siteName: 'Samaritan Roofing',
     images: [
       {
@@ -75,7 +75,7 @@ const localBusinessSchema = {
         { '@type': 'Place', name: 'Fannin County, GA' },
       ],
       priceRange: '$$',
-      image: 'https://www.samaritanroofing.com/images/Asset-6SR-copy.png',
+      image: 'https://samaritanroofing.com/images/Asset-6SR-copy.png',
       sameAs: [
         'https://m.facebook.com/100089266129991/',
         'https://www.thumbtack.com/ga/dahlonega/roofing/samaritan-roofing-restoration-llc/service/440821901933125636',
@@ -132,6 +132,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        {/* Strip known anchor-only hash fragments from the URL so Googlebot
+            records the canonical homepage rather than /#about, /#services, etc.
+            Uses replaceState so the page scroll position is unaffected. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var h=window.location.hash;if(['#about','#services','#why','#estimate'].indexOf(h)!==-1){history.replaceState(null,'',window.location.pathname+window.location.search);}})();`,
+          }}
         />
       </head>
       <Script

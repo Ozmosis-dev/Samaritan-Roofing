@@ -14,8 +14,19 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   compress: true,
   output: 'standalone',
+  trailingSlash: true,
   turbopack: {
     root: __dirname,
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.samaritanroofing.com' }],
+        destination: 'https://samaritanroofing.com/:path*',
+        permanent: true,
+      },
+    ];
   },
   images: {
     formats: ['image/avif', 'image/webp'],

@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Samaritan Roofing provides residential roofing services in Dahlonega, GA and North Georgia, including roof replacement, repairs, fascia and soffit repairs, and gutter replacement.',
   alternates: {
-    canonical: 'https://www.samaritanroofing.com/residential-roofing-services',
+    canonical: 'https://samaritanroofing.com/residential-roofing-services/',
   },
   openGraph: {
     title: 'Residential Roofing Services Dahlonega GA | Samaritan Roofing',
     description:
       'Samaritan Roofing provides residential roofing services in Dahlonega, GA and North Georgia, including roof replacement, repairs, fascia and soffit repairs, and gutter replacement.',
-    url: 'https://www.samaritanroofing.com/residential-roofing-services',
+    url: 'https://samaritanroofing.com/residential-roofing-services/',
     siteName: 'Samaritan Roofing',
     images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Samaritan Roofing — Residential Roofing Services' }],
     type: 'website',

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Learn about Samaritan Roofing & Restoration — Dahlonega GA's trusted roofing contractor serving North Georgia since 2009.",
   alternates: {
-    canonical: 'https://www.samaritanroofing.com/welcome',
+    canonical: 'https://samaritanroofing.com/welcome/',
   },
 }
 
